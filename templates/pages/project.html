@@ -1,14 +1,19 @@
+{% set title = "Projects" %}
+{% set page = "projects" %}
 {% extends "../layout.html" %}
 
-{% block content %}
-
-{{ group }} / {{ project }}
-
-<div class="project">
+{% block mainContent %}
+	{{ group }} / {{ project }}
+	<br>
 	{{ content }}
-</div>
-<div class="role">
-	{{ role }}
-</div>
-	
+	<br>
+	<a href="/projects/{{adjacentProjectUrls.previous.group}}/{{adjacentProjectUrls.previous.project}}">Previous project</a>
+	<br>
+	<a href="/projects/{{adjacentProjectUrls.next.group}}/{{adjacentProjectUrls.next.project}}">Next project</a>
+{% endblock %}
+
+{% block extraContent %}
+	<div class="page__block page__block--large">
+		{{ role }}
+	</div>
 {% endblock %}

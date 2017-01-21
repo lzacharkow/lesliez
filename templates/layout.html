@@ -2,14 +2,36 @@
 <html>
 <head>
 	<title>{{ title }}</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
 
-	hi
+	<div class="page">
+		<ul class="page__navigation">
+			<li><a href="/about">About</a></li>
+			<li><a href="/resume">Resume</a></li>
+			<li><a href="/projects">Projects</a></li>
+			<li><a href="/writing">Writing</a></li>
+		</ul>
 
-	{% block content %}
-	{% endblock %}
+		<div class="page__block {{ page }}">
+			<div class="page__header">
+				<div class="page__header__logo">
+					<a href="/"><img src="/img/logo.svg"></a>
+				</div>
+				<div class="page__header__title">{{ title }}</div>
+			</div>
+			<div class="block__content">
+				{% block mainContent %}
+				{% endblock %}
+			</div>
+		</div>
+
+		{% block extraContent %}
+		{% endblock %}
+
+		Footer
+	</div>
 
 </body>
 </html>

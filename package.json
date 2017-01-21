@@ -3,7 +3,7 @@
   "description": "Portfolio site.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js -e js,html,json"
+    "start": "nodemon app.js -e js,html,json,scss,css"
   },
   "dependencies": {
     "express": "^4.14.0",

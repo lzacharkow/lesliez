@@ -4,68 +4,93 @@ const sassMiddleware = require('node-sass-middleware');
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-const content = require('./content.js');
 
 const app = express();
 const isDev = app.get('env') === 'development';
 
-// UTILITIES
+const getAdjacentProjectUrls = require('./utils/getAdjacentProjectUrls.js');
+const getProjectContents = require('./utils/getProjectContents.js');
+const content = require('./content.js');
 
-function getProject(group, project) {
-	var thisProject = _.find(content.projectIndex, ['id', group]);
 
-	return {
-		content: _.find(thisProject.projects, ['id', project]).content,
-		role: thisProject.role
-	};
-}
-
-// SET
-
-app.set('views', __dirname + '/templates');
- 
-const njk = expressNunjucks(app, {
-    watch: isDev,
-    noCache: isDev
-});
- 
 // SCSS
-
 app.use(
-  	sassMiddleware({
-    	src: __dirname + '/sass',
-    	dest: __dirname + '/public/css',
-    	debug: true,
-  	})
+    sassMiddleware({
+        src: __dirname + '/sass',
+        dest: __dirname + '/public/css',
+        debug: true
+    })
 );
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ROUTES
 
+// SET
+app.set('views', __dirname + '/templates');
+
+const njk = expressNunjucks(app, {
+    watch: isDev,
+    noCache: isDev
+});
+
+
+// ROUTES
 app.get('/', (req, res) => {
     res.render('pages/home', {
     	content: content.home
     });
 });
 
-app.get('/projects', (req, res) => {
-    res.render('pages/project-index');	
-});
-
-app.get('/project/:group/:project', (req, res) => {
-	var projectContents = getProject(req.params.group, req.params.project);
-    
-    res.render('pages/project', {
-    	group: req.params.group,
-    	project: req.params.project,
-    	content: projectContents.content,
-    	role: projectContents.role
+app.get('/styleguide', (req, res) => {
+    res.render('pages/styleguide', {
+    	content: content.styleguide
     });
 });
 
-// START IT UP
+app.get('/about', (req, res) => {
+    res.render('pages/about', {
+        content: content.about
+    });
+});
 
+app.get('/resume', (req, res) => {
+    res.render('pages/resume', {
+        content: content.resume
+    });
+});
+
+app.get('/resume', (req, res) => {
+    res.render('pages/resume', {
+        content: content.resume
+    });
+});
+
+app.get('/writing', (req, res) => {
+    res.render('pages/writing', {
+        content: content.writing
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('pages/project-index', {
+        content: content.projectGroups
+    });
+});
+
+app.get('/projects/:groupId/:projectId', (req, res) => {
+	var projectContents = getProjectContents(req.params.groupId, req.params.projectId, content),
+        adjacentProjectUrls = getAdjacentProjectUrls(req.params.groupId, req.params.projectId, content);
+
+    res.render('pages/project', {
+    	group: req.params.groupId,
+    	project: req.params.projectId,
+    	content: projectContents.content,
+    	role: projectContents.role,
+        adjacentProjectUrls: adjacentProjectUrls
+    });
+});
+
+
+// START IT UP
 console.log('it started');
- 
 app.listen(3000);

@@ -1,0 +1,92 @@
+// Typography
+
+%base-font-style {
+	font-family: $base-font-family;
+	font-size: $font-size-medium;
+	line-height: $line-height-medium;
+	color: $font-color;
+	@media #{$small} { font-size: $font-size-small; }
+	@media #{$large} { font-size: $font-size-large; }
+}
+
+%a {
+	@include transition(color, $transition-speed);
+	color: $link-color;
+	font-weight: bold;
+	text-decoration: none;
+	&:hover {
+		color: $link-color-hover;
+		cursor: pointer;
+	}
+}
+
+%h1 			{ @include get-font-size(2.2); }
+%headline 		{ @include get-font-size(1.6); }
+%h2 			{ @include get-font-size(1.2); }
+%h3 			{ @include get-font-size(1); }
+%p 				{ @include get-font-size(1); }
+%h4 			{ @include get-font-size(0.75); }
+%caption  		{ @include get-font-size(0.75); }
+
+// Elements
+body {
+	background-color: $light-pink;
+	background-image: url('/img/pattern.png');
+	background-size: 200px auto;
+	background-repeat: repeat;
+	padding: 0 $half-spacing;
+}
+
+html 			{ @extend %base-font-style; }
+h1 				{ @extend %h1; }
+.headline 		{ @extend %headline; }
+h2 				{ @extend %h2; }
+h3 				{ @extend %h3; }
+p 				{ @extend %p; }
+h4 				{ @extend %h4; }
+.caption  		{ @extend %caption; }
+a 				{ @extend %a; }
+
+h1, .headline {
+	font-family: $alt-font-family;
+}
+
+.caption {
+	text-align: center;
+	margin-bottom: $spacing*2;
+}
+
+// Layout
+
+h1, h2, h3, h4 {
+	margin: 0;
+	+ p {
+		margin-top: $spacing;
+	}
+}
+
+p {
+	margin: 0;
+	+ p {
+		margin-top: $spacing;
+	}
+	+ h3 {
+		margin-top: $spacing*2;
+	}
+}
+
+h1, h2, h3, h4, p {
+	padding: 0 $spacing*4;
+	@media #{$small} {
+		padding: 0 $spacing*1.5;
+	}
+}
+
+hr {
+	border: 1px dashed $divider-color;
+	margin: $spacing*3 0;
+	@media #{$small} {
+		margin: $spacing*2 0;
+	}
+}
+

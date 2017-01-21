@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Rubik:400,500,700");
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html {
+  font-family: "Libre Baskerville", serif;
+  font-size: 18px;
+  line-height: 1.6; }
+  @media only screen and (max-width: 480px) {
+    html {
+      font-size: 0.9rem; } }
+
+em {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6em;
+  font-style: normal;
+  line-height: 1.2; }
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 2.2em; }
+
+h2 {
+  font-size: 1.2em; }
+
+h3 {
+  font-size: 1em; }
+
+h4, caption {
+  font-size: 0.75em; }

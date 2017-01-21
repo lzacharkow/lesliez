@@ -1,0 +1,14 @@
+@mixin get-font-size($font-size) {
+	font-size: $font-size + em;
+	@if $font-size < 1 {
+		line-height: $line-height-small;
+	} @else if $font-size < 1.6 {
+		line-height: $line-height-medium;
+	} @else {
+		line-height: $line-height-large;
+	}
+}
+
+@mixin get-shadow-color($color) {
+	box-shadow: 0px 2px 20px $color;
+}

@@ -1,0 +1,67 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Rubik:400,500');
+
+
+// ------ Type Styles ------ //
+
+$base-font-family:    'Libre Baskerville', serif;
+$alt-font-family:     'Rubik', sans-serif;
+
+$font-size-small:     16px;
+$font-size-medium:    18px;
+$font-size-large:     20px;
+
+$line-height-small:   1.8;
+$line-height-medium:  1.6;
+$line-height-large:   1.3;
+
+
+// ------ Colors ------ //
+
+$dark-gray:     #5B616E;
+$light-gray:    #E1E0DA;
+$lightest-gray: #ECEBE4;
+$pink:          #DAA49A;
+$light-pink:    #FFEBDE;
+$blue:          #C1E0F7;
+$white:         #FFFFFF;
+
+$font-color:        $dark-gray;
+$link-color:        $pink;
+$link-color-hover:  darken($pink, 8%);
+$bg-color:          $light-pink;
+$divider-color:     $lightest-gray;
+$img-shadow-color:  $lightest-gray;
+$bg-shadow-color:   $pink;
+
+
+// ------ Spacing ------ //
+
+$spacing: 20px;
+$half-spacing: $spacing*0.5;
+
+
+// ------ Layout ------- //
+
+$page-max-width-small: 800px;
+$page-max-width-large: 960px;
+
+
+// ------ Breakpoints ------ //
+
+$small-upper-bound:     520px;
+$large-lower-bound:     1441px;
+
+
+// ------ Media Queries ------ //
+
+$small: 'only screen and (max-width: $small-upper-bound)';
+$large: 'only screen and (min-width: $large-lower-bound)';
+
+
+// ------ Timing ------ //
+
+$transition-speed: 0.4s;
+

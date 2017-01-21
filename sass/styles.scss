@@ -1,5 +1,5 @@
-$beep: blue;
-
-body {
-	color: $beep;
-}
+@import "settings",
+		"tools",
+		"elements",
+		"objects",
+		"page-styles";
