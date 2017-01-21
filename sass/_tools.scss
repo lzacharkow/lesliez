@@ -12,3 +12,39 @@
 @mixin get-shadow-color($color) {
 	box-shadow: 0px 2px 20px $color;
 }
+
+// TODO: Make sticky footer work
+@mixin sticky-footer(
+	$footer-height,
+	$wrapper-selector,
+	$container-selector,
+	$footer-selector
+) {
+	html, body {
+	  	height: 100%;
+	}
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+	#{$wrapper-selector} {
+	  	min-height: 100%;
+	  	height: auto !important;
+	  	height: 100%;
+	  	margin-bottom: -$footer-height;
+	  	#{$container-selector} {
+	    	padding: 0 0 $footer-height 0;
+	  	}
+	}
+	#{$footer-selector} {
+	  	height: $footer-height;
+	}
+}
+
+@mixin clearfix {
+  	&:after {
+    	content: "";
+    	display: table;
+    	clear: both;
+  	}
+}

@@ -1,9 +1,62 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Rubik:400,500");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 html {
   box-sizing: border-box; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
+
+h1, h2, h3, h4, p, .project__details {
+  padding: 0 80px; }
+  @media only screen and (max-width: 520px) {
+    h1, h2, h3, h4, p, .project__details {
+      padding: 0 30px; } }
 
 html {
   font-family: "Libre Baskerville", serif;
@@ -30,31 +83,37 @@ a {
 
 h1 {
   font-size: 2.2em;
-  line-height: 1.3; }
-
-.headline {
-  font-size: 1.6em;
-  line-height: 1.3; }
+  line-height: 1.3;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif; }
 
 h2 {
   font-size: 1.2em;
-  line-height: 1.6; }
+  line-height: 1.6;
+  font-weight: bold; }
 
 h3 {
   font-size: 1em;
-  line-height: 1.6; }
+  line-height: 1.6;
+  font-weight: bold; }
+
+h4, .project__details .detail__label {
+  font-size: 0.75em;
+  line-height: 1.6;
+  font-weight: bold; }
 
 p {
   font-size: 1em;
   line-height: 1.6; }
 
-h4 {
+.caption, .project__details .detail__list-item {
   font-size: 0.75em;
-  line-height: 1.8; }
+  line-height: 1.6; }
 
-.caption {
-  font-size: 0.75em;
-  line-height: 1.8; }
+.headline {
+  font-size: 1.6em;
+  line-height: 1.3;
+  font-family: "Rubik", sans-serif; }
 
 body {
   background-color: #FFEBDE;
@@ -63,12 +122,9 @@ body {
   background-repeat: repeat;
   padding: 0 10px; }
 
-h1, .headline {
-  font-family: "Rubik", sans-serif; }
-
 .caption {
-  text-align: center;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  text-align: center; }
 
 h1, h2, h3, h4 {
   margin: 0; }
@@ -82,18 +138,19 @@ p {
   p + h3 {
     margin-top: 40px; }
 
-h1, h2, h3, h4, p {
-  padding: 0 80px; }
-  @media only screen and (max-width: 520px) {
-    h1, h2, h3, h4, p {
-      padding: 0 30px; } }
-
 hr {
   border: 1px dashed #ECEBE4;
   margin: 60px 0; }
   @media only screen and (max-width: 520px) {
     hr {
       margin: 40px 0; } }
+
+.page-wrapper {
+  padding-top: 20px; }
+  .page-wrapper:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .page__navigation {
   width: 100%;
@@ -102,11 +159,14 @@ hr {
   justify-content: space-around;
   list-style: none;
   padding: 0;
-  margin: 30px auto 80px auto; }
+  margin: 0px auto 70px auto; }
+  .page__navigation a {
+    display: inline-block;
+    padding: 10px; }
 
 .page__header {
   text-align: center;
-  margin-bottom: 30px; }
+  margin-bottom: 40px; }
 
 .page__header__logo {
   position: absolute;
@@ -134,15 +194,17 @@ hr {
   margin-top: 10px; }
 
 .page__block {
-  background: #FFFFFF;
   max-width: 800px;
   margin: 0 auto;
-  position: relative;
   padding: 60px 0 80px 0;
-  border-radius: 2px;
-  box-shadow: 0px 2px 20px rgba(218, 164, 154, 0.3); }
+  position: relative;
+  box-shadow: 0px 2px 20px rgba(218, 164, 154, 0.3);
+  background: #FFFFFF;
+  border-radius: 2px; }
   .page__block:first-of-type {
     padding-top: 50px; }
+  .page__block + .page__block {
+    margin-top: 80px; }
   @media only screen and (max-width: 520px) {
     .page__block {
       padding: 20px 0; } }
@@ -158,10 +220,68 @@ hr {
   .block__content img + p {
     margin-top: 40px; }
 
-.project,
-.about,
-.styleguide {
-  max-width: 960px; }
+html, body {
+  height: 100%; }
+
+body {
+  margin: 0px;
+  padding: 0px; }
+
+.page-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -110px; }
+  .page-wrapper .page {
+    padding: 0 0 110px 0; }
+
+.footer {
+  height: 110px; }
+
+.footer {
+  padding: 30px; }
+  .footer img {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: 0 auto; }
+
+.project__header {
+  text-align: center; }
+  .project__header .header__subtitle {
+    margin-top: 10px; }
+
+.project__details {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .project__details:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .project__details .project__detail {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    .project__details .project__detail:last-child {
+      margin-right: 0; }
+  .project__details.project__details--four > .project__detail {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .project__details.project__details--four > .project__detail:last-child {
+      margin-right: 0; }
+  .project__details .detail__label {
+    font-weight: bold; }
+  .project__details .detail__list-item {
+    margin-top: 5px; }
 
 .home {
   padding-bottom: 90px; }
+
+.projects .page__block,
+.about .page__block,
+.styleguide .page__block {
+  max-width: 960px; }

@@ -83,8 +83,8 @@ app.get('/projects/:groupId/:projectId', (req, res) => {
 
     res.render('pages/project', {
     	group: req.params.groupId,
-    	project: req.params.projectId,
-    	content: projectContents.content,
+    	projectId: req.params.projectId,
+    	project: projectContents.project,
     	role: projectContents.role,
         adjacentProjectUrls: adjacentProjectUrls
     });

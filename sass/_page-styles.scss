@@ -1,9 +1,10 @@
-.project,
+@import "pages/projects",
+		"pages/home";
+
+.projects,
 .about,
 .styleguide {
-	max-width: $page-max-width-large;
-}
-
-.home {
-	padding-bottom: $spacing*4.5;
+	.page__block {
+		max-width: $page-max-width-large;
+	}
 }

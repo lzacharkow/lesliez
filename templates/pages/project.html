@@ -3,17 +3,51 @@
 {% extends "../layout.html" %}
 
 {% block mainContent %}
-	{{ group }} / {{ project }}
-	<br>
-	{{ content }}
-	<br>
-	<a href="/projects/{{adjacentProjectUrls.previous.group}}/{{adjacentProjectUrls.previous.project}}">Previous project</a>
-	<br>
-	<a href="/projects/{{adjacentProjectUrls.next.group}}/{{adjacentProjectUrls.next.project}}">Next project</a>
+
+	<div class="project__header">
+		<h1>{{ project.title }}</h1>
+
+		{% if project.subtitle %}
+		<div class="header__subtitle">
+			{{ project.subtitle }}
+		</div>
+		{% endif %}
+	</div>
+
+	<hr>
+
+	<div class="project__details{% if project.details.length == 4 %} project__details--four{% endif %}">
+		{% for group in project.details %}
+			<div class="project__detail">
+				<div class="detail__label">
+					{{ group.title }}
+				</div>
+				{% for item in group.items %}
+				<div class="detail__list-item">
+					{{ item }}
+				</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+
+	<hr>
+
+	<div class="project__body">
+		{{ project.content | safe }}
+	</div>
+
+	<hr>
+
+	<div class="project__footer">
+		<a href="/projects/{{adjacentProjectUrls.previous.group}}/{{adjacentProjectUrls.previous.project}}">Previous project</a>
+		<br>
+		<a href="/projects/{{adjacentProjectUrls.next.group}}/{{adjacentProjectUrls.next.project}}">Next project</a>
+	</div>
 {% endblock %}
 
 {% block extraContent %}
-	<div class="page__block page__block--large">
+	<div class="page__block">
 		{{ role }}
 	</div>
 {% endblock %}

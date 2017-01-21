@@ -1,5 +1,10 @@
 $logo-size: 100px;
 
+.page-wrapper {
+	padding-top: $spacing;
+	@include clearfix;
+}
+
 .page__navigation {
 	width: 100%;
 	max-width: 460px;
@@ -7,12 +12,16 @@ $logo-size: 100px;
     justify-content: space-around;
     list-style: none;
     padding: 0;
-    margin: $spacing*1.5 auto ($spacing*1.5 + $logo-size/2) auto;
+    margin: 0px auto ($spacing + $logo-size/2) auto;
+    a {
+    	display: inline-block;
+		padding: $half-spacing;
+    }
 }
 
 .page__header {
 	text-align: center;
-	margin-bottom: $spacing*1.5;
+	margin-bottom: $spacing*2;
 }
 
 .page__header__logo {
@@ -39,15 +48,18 @@ $logo-size: 100px;
 }
 
 .page__block {
-	background: $white;
 	max-width: $page-max-width-small;
 	margin: 0 auto;
-	position: relative;
 	padding: $spacing*3 0 $spacing*4 0;
-	border-radius: 2px;
+	position: relative;
 	@include get-shadow-color(rgba($pink, 0.3));
+	background: $white;
+	border-radius: 2px;
 	&:first-of-type {
 		padding-top: $logo-size/2;
+	}
+	+ .page__block {
+		margin-top: $spacing*4;
 	}
 
 	@media #{$small} {
@@ -68,5 +80,24 @@ $logo-size: 100px;
 		+ p {
 			margin-top: $spacing*2;
 		}
+	}
+}
+
+$footer-logo-size: 50px;
+$footer-height: $footer-logo-size + $spacing*3;
+
+@include sticky-footer(
+	$footer-height,
+	'.page-wrapper',
+	'.page',
+	'.footer'
+);
+
+.footer {
+	padding: $spacing*1.5;
+	img {
+		@include size($footer-logo-size);
+		display: block;
+		margin: 0 auto;
 	}
 }

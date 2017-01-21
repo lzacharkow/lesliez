@@ -6,12 +6,10 @@ function getProjectContents(groupId, projectId, content) {
 	var thisGroup = _.find(content.projectGroups, ['id', groupId]),
         thisProject = _.find(thisGroup.projects, ['id', projectId]);
 
-    if (_.isUndefined(thisProject)) {
-        return {};
-    }
+    console.log(thisProject);
 
 	return {
-		content: thisProject.content,
+		project: thisProject,
 		role: thisGroup.role
 	};
 }

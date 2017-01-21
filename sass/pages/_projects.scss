@@ -1,0 +1,30 @@
+.project__header {
+	text-align: center;
+
+	.header__subtitle {
+		margin-top: $half-spacing;
+	}
+}
+
+.project__details {
+	@include outer-container;
+	@extend %base-element-padding;
+
+	.project__detail {
+		@include span-columns(4);
+	}
+
+	&.project__details--four > .project__detail {
+		@include span-columns(3);
+	}
+
+	.detail__label {
+		@extend %h4;
+		font-weight: bold;
+	}
+
+	.detail__list-item {
+		@extend %tiny-text;
+		margin-top: $quarter-spacing;
+	}
+}

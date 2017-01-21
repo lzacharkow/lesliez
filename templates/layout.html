@@ -6,31 +6,37 @@
 </head>
 <body>
 
-	<div class="page">
-		<ul class="page__navigation">
-			<li><a href="/about">About</a></li>
-			<li><a href="/resume">Resume</a></li>
-			<li><a href="/projects">Projects</a></li>
-			<li><a href="/writing">Writing</a></li>
-		</ul>
+	<div class="page-wrapper">
+		<div class="page {{ page }}">
+			<ul class="page__navigation">
+				<li><a href="/about">About</a></li>
+				<li><a href="/resume">Resume</a></li>
+				<li><a href="/projects">Projects</a></li>
+				<li><a href="/writing">Writing</a></li>
+			</ul>
 
-		<div class="page__block {{ page }}">
-			<div class="page__header">
-				<div class="page__header__logo">
-					<a href="/"><img src="/img/logo.svg"></a>
+			<div class="page__block">
+				<div class="page__header">
+					<div class="page__header__logo">
+						<a href="/"><img src="/img/logo.svg"></a>
+					</div>
+					{% if title %}
+						<div class="page__header__title">{{ title }}</div>
+					{% endif %}
 				</div>
-				<div class="page__header__title">{{ title }}</div>
+				<div class="block__content">
+					{% block mainContent %}
+					{% endblock %}
+				</div>
 			</div>
-			<div class="block__content">
-				{% block mainContent %}
-				{% endblock %}
-			</div>
+
+			{% block extraContent %}
+			{% endblock %}
 		</div>
+	</div>
 
-		{% block extraContent %}
-		{% endblock %}
-
-		Footer
+	<div class="footer">
+		<img src="/img/logo.svg">
 	</div>
 
 </body>

@@ -1,4 +1,11 @@
-// Typography
+// ------ Placeholders ------ //
+
+%base-element-padding {
+	padding: 0 $spacing*4;
+	@media #{$small} {
+		padding: 0 $spacing*1.5;
+	}
+}
 
 %base-font-style {
 	font-family: $base-font-family;
@@ -20,15 +27,43 @@
 	}
 }
 
-%h1 			{ @include get-font-size(2.2); }
-%headline 		{ @include get-font-size(1.6); }
-%h2 			{ @include get-font-size(1.2); }
-%h3 			{ @include get-font-size(1); }
-%p 				{ @include get-font-size(1); }
-%h4 			{ @include get-font-size(0.75); }
-%caption  		{ @include get-font-size(0.75); }
+%h1 {
+	@include get-font-size(2.2);
+	font-weight: bold;
+	font-family: $alt-font-family;
+}
 
-// Elements
+%h2 {
+	@include get-font-size(1.2);
+	font-weight: bold;
+}
+
+%h3 {
+	@include get-font-size(1);
+	font-weight: bold;
+}
+
+%h4 {
+	@include get-font-size(0.75);
+	font-weight: bold;
+}
+
+%p {
+	@include get-font-size(1);
+}
+
+%tiny-text {
+	@include get-font-size(0.75);
+}
+
+%headline {
+	@include get-font-size(1.6);
+	font-family: $alt-font-family;
+}
+
+
+// ------ Elements ------ //
+
 body {
 	background-color: $light-pink;
 	background-image: url('/img/pattern.png');
@@ -39,24 +74,21 @@ body {
 
 html 			{ @extend %base-font-style; }
 h1 				{ @extend %h1; }
-.headline 		{ @extend %headline; }
 h2 				{ @extend %h2; }
 h3 				{ @extend %h3; }
-p 				{ @extend %p; }
 h4 				{ @extend %h4; }
-.caption  		{ @extend %caption; }
+p 				{ @extend %p; }
 a 				{ @extend %a; }
-
-h1, .headline {
-	font-family: $alt-font-family;
-}
+.headline 		{ @extend %headline; }
+.caption  		{ @extend %tiny-text; }
 
 .caption {
-	text-align: center;
 	margin-bottom: $spacing*2;
+	text-align: center;
 }
 
-// Layout
+
+// ------ Layout ------ //
 
 h1, h2, h3, h4 {
 	margin: 0;
@@ -76,10 +108,7 @@ p {
 }
 
 h1, h2, h3, h4, p {
-	padding: 0 $spacing*4;
-	@media #{$small} {
-		padding: 0 $spacing*1.5;
-	}
+	@extend %base-element-padding;
 }
 
 hr {

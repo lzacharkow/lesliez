@@ -13,10 +13,28 @@ module.exports = {
 			projects: [
 				{
 					id: 'product-page',
-					content: "This is the product page."
+					title: "Product Page",
+					subtitle: "UO Case Study",
+					details: [
+						{
+							title: "Details",
+							items: [ "One", "Two", "Three" ]
+						}, {
+							title: "Details",
+							items: [ "One", "Two", "Three" ]
+						}, {
+							title: "Details",
+							items: [ "One", "Two", "Three" ]
+						}, {
+							title: "Details",
+							items: [ "One", "Two", "Three" ]
+						}
+					],
+					content: fs.readFileSync('./content/projects/uo/product-page.html')
 				},
 				{
 					id: 'navigation',
+					title: "Navigation &amp; Taxonomy",
 					content: "This is the navigation content."
 				}
 			]
