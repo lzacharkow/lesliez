@@ -1,3 +1,25 @@
-{% set title = "Writing" %}
+{% set title = "My tiny writing career" %}
 {% set page = "writing" %}
 {% extends "../layout.html" %}
+
+{% block mainContent %}
+
+	{% for publication in writing %}
+	<div class="group-section">
+		<div class="group__labels">
+			<div class="label__title">
+				{{ publication.name }}
+			</div>
+		</div>
+		<ul class="group__items">
+			{% for article in publication.articles %}
+			<li class="items__item">
+				<a class="item__title" href="{{article.link}}" target="_blank">{{ article.label }}</a>
+				<div class="item__dates">{{ article.date }}</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endfor %}
+
+{% endblock %}

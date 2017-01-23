@@ -1,9 +1,71 @@
+$navigation-arrow-width: 27px + $spacing;
+
+.projects .page__block--main {
+	padding-bottom: 0;
+}
+
 .project__header {
 	text-align: center;
+	position: relative;
+	padding: 0 $navigation-arrow-width;
+	@media #{$small} {
+		padding: 0;
+	}
 
 	.header__subtitle {
-		margin-top: $half-spacing;
+		margin-top: $quarter-spacing;
 	}
+}
+
+.project__navigation {
+	// offset by spacing so that padding is all around but viz aligned to edge
+	$arrow-edge-offset: $base-element-padding-large - $spacing;
+	@include position(absolute, 50% $arrow-edge-offset auto auto);
+	display: inline-block;
+
+	a {
+		@include transform(translateY(-50%));
+		display: inline-block;
+		padding: $spacing;
+	}
+
+	svg {
+		fill: $link-color;
+		@include size(27px 14px);
+		@include transition(fill $transition-speed);
+	}
+
+	span {
+		padding: $spacing;
+	}
+
+	&:hover svg {
+		fill: $link-color-hover;
+	}
+
+	&:first-child {
+		@include position(absolute, 50% auto auto $arrow-edge-offset);
+		svg {
+			@include transform(rotate(180deg));
+		}
+	}
+
+	@media #{$small} {
+		right: $base-element-padding-small;
+		&:first-child {
+			left: $base-element-padding-small;
+		}
+		&.project__navigation--top {
+			display: none;
+		}
+		span {
+			display: none;
+		}
+		a {
+			padding: $spacing;
+		}
+	}
+
 }
 
 .project__details {
@@ -12,19 +74,75 @@
 
 	.project__detail {
 		@include span-columns(4);
+		@media #{$small} {
+			width: 100%;
+			+ .project__detail {
+				margin-top: $spacing;
+			}
+		}
 	}
 
-	&.project__details--four > .project__detail {
+	&.project__details--four .project__detail {
 		@include span-columns(3);
+		@media #{$small} {
+			width: 100%;
+			+ .project__detail {
+				margin-top: $spacing;
+			}
+		}
 	}
 
 	.detail__label {
 		@extend %h4;
-		font-weight: bold;
 	}
 
 	.detail__list-item {
 		@extend %tiny-text;
 		margin-top: $quarter-spacing;
 	}
+}
+
+.project__footer {
+	@extend .block__footer;
+}
+
+.org-chart {
+	@extend %base-element-padding;
+	display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: $spacing 0 $half-spacing 0;
+}
+
+.org-chart__dept {
+	@include size(160px);
+	@include get-font-size(1);
+	margin: $half-spacing;
+	border-radius: 200px;
+	border: 4px solid $lightest-gray;
+	text-align: center;
+	position: relative;
+
+	&:before {
+  		content: '';
+  		display: inline-block;
+  		height: 100%;
+  		vertical-align: middle;
+  		margin-right: -0.25em;
+	}
+
+	span {
+		@include position(absolute, 50% $half-spacing null $half-spacing);
+		@include transform(translateY(-50%));
+	  	display: inline-block;
+	}
+
+	@media #{$small} {
+		@include size(120px);
+		@include get-font-size(0.75);
+	}
+}
+
+.org-chart__dept--me {
+	border-color: $light-pink;
 }

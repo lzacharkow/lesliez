@@ -14,7 +14,7 @@ $font-size-medium:    18px;
 $font-size-large:     20px;
 
 $line-height-small:   1.6;
-$line-height-medium:  1.6;
+$line-height-medium:  1.7;
 $line-height-large:   1.3;
 
 
@@ -43,6 +43,9 @@ $spacing: 20px;
 $half-spacing: $spacing/2;
 $quarter-spacing: $spacing/4;
 
+$base-element-padding-large: $spacing*4;
+$base-element-padding-small: $spacing*1.5;
+
 
 // ------ Layout ------- //
 
@@ -52,7 +55,7 @@ $page-max-width-large: 960px;
 
 // ------ Breakpoints ------ //
 
-$small-upper-bound: 520px;
+$small-upper-bound: 640px;
 $large-lower-bound: 1441px;
 
 

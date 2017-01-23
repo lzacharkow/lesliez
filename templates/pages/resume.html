@@ -1,3 +1,26 @@
 {% set title = "Resume" %}
 {% set page = "resume" %}
 {% extends "../layout.html" %}
+
+{% block mainContent %}
+
+	{% for resumeSection in resume %}
+	<div class="group-section">
+		<div class="group__labels">
+			<div class="label__title">
+				{{ resumeSection.groupName }}
+			</div>
+		</div>
+		<ul class="group__items">
+			{% for item in resumeSection.items %}
+			<li class="items__item">
+				<a class="item__title" href="{{item.link}}" target="_blank">{{ item.label }}</a>
+				<div class="item__job-title">{{ item.title }}</div>
+				<div class="item__dates">{{ item.dates }}</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endfor %}
+
+{% endblock %}

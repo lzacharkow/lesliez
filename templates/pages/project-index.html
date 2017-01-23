@@ -1,3 +1,31 @@
 {% set title = "Projects" %}
 {% set page = "project-index" %}
 {% extends "../layout.html" %}
+
+{% block mainContent %}
+
+	{% for group in projectGroups %}
+	<div class="group-section">
+		<div class="group__labels">
+			<div class="label__title">
+				{{ group.groupName }}
+			</div>
+			{% if group.desc %}
+			<div class="label__description">
+				{{ group.desc }}
+			</div>
+			{% endif %}
+		</div>
+		<ul class="group__items">
+			{% for project in group.projects %}
+			<li class="items__item">
+				<a class="item__title" href="/projects/{{group.id}}/{{project.id}}">
+					{{ project.title }}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endfor %}
+
+{% endblock %}

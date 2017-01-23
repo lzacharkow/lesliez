@@ -5,13 +5,25 @@
 {% block mainContent %}
 
 	<div class="project__header">
+		<div class="project__navigation project__navigation--top">
+			<a href="{{previousProjectUrl}}">
+				<svg viewBox="0 0 27 16"><use xlink:href="#arrow" /></svg>
+			</a>
+		</div>
+
 		<h1>{{ project.title }}</h1>
 
 		{% if project.subtitle %}
-		<div class="header__subtitle">
+		<p class="header__subtitle">
 			{{ project.subtitle }}
-		</div>
+		</p>
 		{% endif %}
+
+		<div class="project__navigation project__navigation--top">
+			<a href="{{nextProjectUrl}}">
+				<svg viewBox="0 0 27 16"><use xlink:href="#arrow" /></svg>
+			</a>
+		</div>
 	</div>
 
 	<hr>
@@ -24,7 +36,7 @@
 				</div>
 				{% for item in group.items %}
 				<div class="detail__list-item">
-					{{ item }}
+					{{ item | safe }}
 				</div>
 				{% endfor %}
 			</div>
@@ -37,17 +49,57 @@
 		{{ project.content | safe }}
 	</div>
 
-	<hr>
-
 	<div class="project__footer">
-		<a href="/projects/{{adjacentProjectUrls.previous.group}}/{{adjacentProjectUrls.previous.project}}">Previous project</a>
-		<br>
-		<a href="/projects/{{adjacentProjectUrls.next.group}}/{{adjacentProjectUrls.next.project}}">Next project</a>
+		<div class="project__navigation">
+			<a href="{{previousProjectUrl}}">
+				<svg viewBox="0 0 27 16"><use xlink:href="#arrow" /></svg>
+				<span>Previous</span>
+			</a>
+		</div>
+		<a href="/projects">Back to Projects</a>
+		<div class="project__navigation">
+			<a href="{{nextProjectUrl}}">
+				<span>Next</span>
+				<svg viewBox="0 0 27 16"><use xlink:href="#arrow" /></svg>
+			</a>
+		</div>
 	</div>
 {% endblock %}
 
+{% if group.role %}
 {% block extraContent %}
-	<div class="page__block">
-		{{ role }}
+
+	<div class="page__block page__block--role">
+
+		{{ group.role | safe }}
+
+		<div class="org-chart">
+			{% for dept in group.org %}
+				<div class="org-chart__dept{% if dept.me %} org-chart__dept--me{% endif %}">
+					<span>{{ dept.name }}</span>
+				</div>
+			{% endfor %}
+		</div>
+		<p class="caption">The organization at {{ group.groupName }}.</p>
+
+		<hr>
+
+		<h2>Projects</h2>
+		<ul>
+			{% for project in group.projects %}
+			<li><a href="/projects/{{group.id}}/{{project.id}}">
+				{{ project.title }}
+			</a></li>
+			{% endfor %}
+
+			{% for project in group.moreProjects %}
+			<li>
+				{{ project }}
+			</li>
+			{% endfor %}
+		</ul>
+
 	</div>
+
 {% endblock %}
+{% endif %}

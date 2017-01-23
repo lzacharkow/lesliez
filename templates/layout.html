@@ -6,16 +6,23 @@
 </head>
 <body>
 
+	<svg display="none" viewBox="0 0 27 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<symbol id="arrow">
+			<path transform="translate(-330.000000, -325.000000)" d="M344.910451,325 C344.972057,327.168537 345.633883,329.581738 346.985699,331.547855 L330,331.547855 L330,334.453905 L346.99978,334.453905 C345.621562,336.467547 345.09703,338.660726 344.910451,341 C347.577118,337.720792 352.470407,334.585919 356.434323,333 C352.470407,331.343674 347.432783,328.388339 344.910451,325"></path>
+		</symbol>
+	</svg>
+
+
 	<div class="page-wrapper">
 		<div class="page {{ page }}">
-			<ul class="page__navigation">
-				<li><a href="/about">About</a></li>
-				<li><a href="/resume">Resume</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/writing">Writing</a></li>
-			</ul>
+			<div class="page__navigation">
+				<a href="/about">About</a>
+				<a href="/resume">Resume</a>
+				<a href="/projects">Projects</a>
+				<a href="/writing">Writing</a>
+			</div>
 
-			<div class="page__block">
+			<div class="page__block page__block--main">
 				<div class="page__header">
 					<div class="page__header__logo">
 						<a href="/"><img src="/img/logo.svg"></a>
@@ -36,7 +43,9 @@
 	</div>
 
 	<div class="footer">
-		<img src="/img/logo.svg">
+		<div class="footer__logo">
+			<img src="/img/logo.svg">
+		</div>
 	</div>
 
 </body>

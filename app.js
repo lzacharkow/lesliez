@@ -35,45 +35,35 @@ const njk = expressNunjucks(app, {
 
 
 // ROUTES
-app.get('/', (req, res) => {
-    res.render('pages/home', {
-    	content: content.home
+app.get('/styleguide', (req, res) => {
+    res.render('pages/styleguide', {
+        content: content.styleguide
     });
 });
 
-app.get('/styleguide', (req, res) => {
-    res.render('pages/styleguide', {
-    	content: content.styleguide
-    });
+app.get('/', (req, res) => {
+    res.render('pages/home');
 });
 
 app.get('/about', (req, res) => {
-    res.render('pages/about', {
-        content: content.about
-    });
+    res.render('pages/about');
 });
 
 app.get('/resume', (req, res) => {
     res.render('pages/resume', {
-        content: content.resume
-    });
-});
-
-app.get('/resume', (req, res) => {
-    res.render('pages/resume', {
-        content: content.resume
+        resume: content.resume
     });
 });
 
 app.get('/writing', (req, res) => {
     res.render('pages/writing', {
-        content: content.writing
+        writing: content.writing
     });
 });
 
 app.get('/projects', (req, res) => {
     res.render('pages/project-index', {
-        content: content.projectGroups
+        projectGroups: content.projectGroups
     });
 });
 
@@ -82,11 +72,12 @@ app.get('/projects/:groupId/:projectId', (req, res) => {
         adjacentProjectUrls = getAdjacentProjectUrls(req.params.groupId, req.params.projectId, content);
 
     res.render('pages/project', {
-    	group: req.params.groupId,
+    	groupId: req.params.groupId,
+        group: projectContents.group,
     	projectId: req.params.projectId,
     	project: projectContents.project,
-    	role: projectContents.role,
-        adjacentProjectUrls: adjacentProjectUrls
+        nextProjectUrl: adjacentProjectUrls.next,
+        previousProjectUrl: adjacentProjectUrls.previous
     });
 });
 

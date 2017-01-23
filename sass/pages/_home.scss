@@ -1,3 +1,6 @@
-.home {
-	padding-bottom: $spacing*4.5;
+.home .page__block--main {
+	padding-bottom: $spacing*5;
+	@media #{$small} {
+		padding-bottom: $spacing*3;
+	}
 }

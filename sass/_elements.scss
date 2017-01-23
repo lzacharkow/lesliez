@@ -1,9 +1,9 @@
 // ------ Placeholders ------ //
 
 %base-element-padding {
-	padding: 0 $spacing*4;
+	padding: 0 $base-element-padding-large;
 	@media #{$small} {
-		padding: 0 $spacing*1.5;
+		padding: 0 $base-element-padding-small;
 	}
 }
 
@@ -45,10 +45,11 @@
 
 %h4 {
 	@include get-font-size(0.75);
-	font-weight: bold;
+	font-style: italic;
 }
 
 %p {
+	@include clearfix;
 	@include get-font-size(1);
 }
 
@@ -69,7 +70,7 @@ body {
 	background-image: url('/img/pattern.png');
 	background-size: 200px auto;
 	background-repeat: repeat;
-	padding: 0 $half-spacing;
+	padding: 0 $half-spacing !important;
 }
 
 html 			{ @extend %base-font-style; }
@@ -83,8 +84,27 @@ a 				{ @extend %a; }
 .caption  		{ @extend %tiny-text; }
 
 .caption {
-	margin-bottom: $spacing*2;
 	text-align: center;
+	font-style: italic;
+	+ p {
+		margin-top: $spacing*2;
+	}
+}
+
+ol, ul {
+	@extend %base-element-padding;
+	margin-left: $spacing;
+	li + li {
+		margin-top: $half-spacing;
+	}
+}
+
+ol {
+	list-style: decimal;
+}
+
+ul {
+	list-style: circle;
 }
 
 
@@ -92,14 +112,14 @@ a 				{ @extend %a; }
 
 h1, h2, h3, h4 {
 	margin: 0;
-	+ p {
+	+ p, + ol, + ul {
 		margin-top: $spacing;
 	}
 }
 
 p {
 	margin: 0;
-	+ p {
+	+ p, + ol, + ul {
 		margin-top: $spacing;
 	}
 	+ h3 {
@@ -112,10 +132,33 @@ h1, h2, h3, h4, p {
 }
 
 hr {
-	border: 1px dashed $divider-color;
+	border: none;
+	border-top: 1px dashed $divider-color;
 	margin: $spacing*3 0;
 	@media #{$small} {
 		margin: $spacing*2 0;
 	}
 }
 
+.project__img {
+	@extend %base-element-padding;
+	margin-top: $spacing*2;
+	text-align: center;
+
+	img {
+		width: 100%;
+		display: inline-block;
+		@include get-shadow-color($img-shadow-color);
+	}
+
+	&.project__img--small img {
+		max-width: 600px;
+	}
+
+	+ .caption {
+		margin-top: $spacing;
+	}
+	+ p {
+		margin-top: $spacing*2;
+	}
+}

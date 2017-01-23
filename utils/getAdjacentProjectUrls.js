@@ -2,6 +2,10 @@ var _ = require('lodash');
 
 module.exports = getAdjacentProjectUrls;
 
+function makeUrl(group, project) {
+    return '/projects/' + group + '/' + project;
+}
+
 function getAdjacentProjectUrls(groupId, projectId, content) {
     var groupIndex = _.findIndex(content.projectGroups, ['id', groupId]),
         projectIndex = _.findIndex(content.projectGroups[groupIndex].projects, ['id', projectId]);
@@ -11,17 +15,12 @@ function getAdjacentProjectUrls(groupId, projectId, content) {
             previousProjectIndex = projectIndex - 1;
 
         if (previousProjectIndex >= 0) {
-            return {
-                group: groupId,
-                project: content.projectGroups[groupIndex].projects[previousProjectIndex].id
-            };
+            return makeUrl(groupId, content.projectGroups[groupIndex].projects[previousProjectIndex].id);
+
         } else {
             var previousGroup = content.projectGroups[previousGroupIndex] ||
                                 _.last(content.projectGroups);
-            return {
-                group: previousGroup.id,
-                project: _.last(previousGroup.projects).id
-            };
+            return makeUrl(previousGroup.id, _.last(previousGroup.projects).id);
         }
     }
 
@@ -30,18 +29,13 @@ function getAdjacentProjectUrls(groupId, projectId, content) {
             nextProjectIndex = projectIndex + 1;
 
         if (nextProjectIndex < content.projectGroups[groupIndex].projects.length) {
-            return {
-                group: groupId,
-                project: content.projectGroups[groupIndex].projects[nextProjectIndex].id
-            };
+            return makeUrl(groupId, content.projectGroups[groupIndex].projects[nextProjectIndex].id);
+
         } else {
             var nextGroup = nextGroupIndex < content.projectGroups.length
                     ? content.projectGroups[nextGroupIndex]
                     : content.projectGroups[0];
-            return {
-                group: nextGroup.id,
-                project: nextGroup.projects[0].id
-            };
+            return makeUrl(nextGroup.id, nextGroup.projects[0].id);
         }
     }
 
