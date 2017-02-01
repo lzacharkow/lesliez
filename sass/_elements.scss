@@ -140,24 +140,14 @@ hr {
 	}
 }
 
-.project__img {
+.img-wrapper {
 	@extend %base-element-padding;
 	margin-top: $spacing*2;
-	text-align: center;
-
-	img {
-		width: 100%;
-		display: inline-block;
-		@include get-shadow-color($img-shadow-color);
-	}
-
-	&.project__img--small img {
-		max-width: 600px;
-	}
 
 	+ .caption {
 		margin-top: $spacing;
 	}
+
 	+ p {
 		margin-top: $spacing*2;
 	}

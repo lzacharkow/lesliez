@@ -1,0 +1,76 @@
+$desktop-img-width: 80%;
+$desktop-img-height: 420px;
+
+$tablet-img-width: $desktop-img-width/2;
+$tablet-img-top-pos: $spacing;
+
+$mobile-img-width: $desktop-img-width/4;
+$mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
+
+.img-wrapper {
+	text-align: center;
+
+	img {
+		width: 100%;
+		display: inline-block;
+		@include get-shadow-color($img-shadow-color);
+
+		&.img--small {
+			max-width: 600px;
+		}
+	}
+
+	&.img-wrapper--composite {
+		padding-bottom: $tablet-img-top-pos*2;
+	}
+}
+
+.img-wrapper__scrollable-wrapper {
+	position: relative;
+	width: 100%;
+	text-align: left;
+}
+
+.scrollable-img {
+	display: inline-block;
+	@include size(100% 500px);
+	@include get-shadow-color(rgba(0,0,0,.1));
+	overflow-y: hidden;
+
+	&:hover {
+		overflow-y: scroll;
+		@media #{$small} {
+			overflow-y: hidden;
+		}
+	}
+
+	img {
+		display: block;
+		box-shadow: none;
+	}
+
+	@media #{$small} {
+		@include size(100% 300px);
+	}
+
+	&.no-scroll {
+		overflow-y: hidden;
+	}
+}
+
+.scrollable-img--desktop {
+	@include size($desktop-img-width $desktop-img-height);
+	@media #{$small} {
+		height: $desktop-img-height/2;
+	}
+}
+
+.scrollable-img--mobile {
+	@include size($mobile-img-width 75%);
+	@include position(absolute, null $mobile-img-right-pos $tablet-img-top-pos*-2 null);
+}
+
+.scrollable-img--tablet {
+	@include size($tablet-img-width 100%);
+	@include position(absolute, $tablet-img-top-pos 0% null null);
+}

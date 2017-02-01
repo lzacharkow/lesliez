@@ -1,0 +1,56 @@
+.about .page__block {
+	padding-bottom: 0;
+}
+
+.about__content {
+	@include outer-container;
+	@extend %base-element-padding;
+
+	padding-top: $spacing*1.5;
+	@media #{$small} {
+		padding-top: $spacing;
+	}
+	p {
+		padding: 0;
+	}
+}
+
+.pic-column {
+	@include span-columns(4);
+	padding-right: $spacing;
+	margin-bottom: $spacing*2;
+	@media #{$small} {
+		padding-right: 0;
+		width: 100%;
+	}
+
+	img {
+		width: 100%;
+		border-radius: 300px;
+		margin-bottom: $half-spacing;
+	}
+
+	.caption a {
+		display: block;
+		margin-top: $quarter-spacing;
+	}
+}
+
+.about-column {
+	@include span-columns(8);
+	@media #{$small} {
+		width: 100%;
+	}
+}
+
+.about__footer {
+	@extend .block__footer;
+	text-align: center;
+	a {
+		padding: $half-spacing $spacing;
+		@media #{$small} {
+			padding: $half-spacing 0;
+			display: block;
+		}
+	}
+}

@@ -52,10 +52,10 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-ol, ul, h1, h2, h3, h4, p, .project__img, .block__footer, .project__footer, .about__footer, .group-section, .project__details, .org-chart, .about__content {
+ol, ul, h1, h2, h3, h4, p, .img-wrapper, .block__footer, .project__footer, .about__footer, .group-section, .project__details, .org-chart, .about__content {
   padding: 0 80px; }
   @media only screen and (max-width: 640px) {
-    ol, ul, h1, h2, h3, h4, p, .project__img, .block__footer, .project__footer, .about__footer, .group-section, .project__details, .org-chart, .about__content {
+    ol, ul, h1, h2, h3, h4, p, .img-wrapper, .block__footer, .project__footer, .about__footer, .group-section, .project__details, .org-chart, .about__content {
       padding: 0 30px; } }
 
 html {
@@ -163,18 +163,11 @@ hr {
     hr {
       margin: 40px 0; } }
 
-.project__img {
-  margin-top: 40px;
-  text-align: center; }
-  .project__img img {
-    width: 100%;
-    display: inline-block;
-    box-shadow: 0px 2px 20px #ECEBE4; }
-  .project__img.project__img--small img {
-    max-width: 600px; }
-  .project__img + .caption {
+.img-wrapper {
+  margin-top: 40px; }
+  .img-wrapper + .caption {
     margin-top: 20px; }
-  .project__img + p {
+  .img-wrapper + p {
     margin-top: 40px; }
 
 .page-wrapper {
@@ -355,6 +348,64 @@ body {
     @media only screen and (max-width: 640px) {
       .group__items .items__item + .items__item {
         margin-top: 10px; } }
+
+.img-wrapper {
+  text-align: center; }
+  .img-wrapper img {
+    width: 100%;
+    display: inline-block;
+    box-shadow: 0px 2px 20px #ECEBE4; }
+    .img-wrapper img.img--small {
+      max-width: 600px; }
+  .img-wrapper.img-wrapper--composite {
+    padding-bottom: 40px; }
+
+.img-wrapper__scrollable-wrapper {
+  position: relative;
+  width: 100%;
+  text-align: left; }
+
+.scrollable-img {
+  display: inline-block;
+  height: 500px;
+  width: 100%;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden; }
+  .scrollable-img:hover {
+    overflow-y: scroll; }
+    @media only screen and (max-width: 640px) {
+      .scrollable-img:hover {
+        overflow-y: hidden; } }
+  .scrollable-img img {
+    display: block;
+    box-shadow: none; }
+  @media only screen and (max-width: 640px) {
+    .scrollable-img {
+      height: 300px;
+      width: 100%; } }
+  .scrollable-img.no-scroll {
+    overflow-y: hidden; }
+
+.scrollable-img--desktop {
+  height: 420px;
+  width: 80%; }
+  @media only screen and (max-width: 640px) {
+    .scrollable-img--desktop {
+      height: 210px; } }
+
+.scrollable-img--mobile {
+  height: 75%;
+  width: 20%;
+  position: absolute;
+  right: 30%;
+  bottom: -40px; }
+
+.scrollable-img--tablet {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  top: 20px;
+  right: 0%; }
 
 .projects .page__block--main {
   padding-bottom: 0; }

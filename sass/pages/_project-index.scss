@@ -1,0 +1,10 @@
+.project-index {
+	.group__items {
+		color: $link-color;
+		@media #{$small} {
+			list-style: circle;
+			margin: $spacing 0px 0px $spacing;
+			width: 100%;
+		}
+	}
+}
