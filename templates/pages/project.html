@@ -69,7 +69,9 @@
 {% if group.role %}
 {% block extraContent %}
 
-	<div class="page__block page__block--role">
+	<div class="page__block page__block--role" id="role">
+
+		<h2>More about {{ group.groupName }}</h2>
 
 		{{ group.role | safe }}
 
@@ -82,6 +84,7 @@
 		</div>
 		<p class="caption">The organization at {{ group.groupName }}.</p>
 
+		{% if not group.moreProjects.hide %}
 		<hr>
 
 		<h2>Projects</h2>
@@ -98,6 +101,7 @@
 			</li>
 			{% endfor %}
 		</ul>
+		{% endif %}
 
 	</div>
 

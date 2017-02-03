@@ -3,11 +3,3 @@
 		"pages/project-index",
 		"pages/resume",
 		"pages/about";
-
-.projects,
-.about,
-.styleguide {
-	.page__block {
-		max-width: $page-max-width-large;
-	}
-}

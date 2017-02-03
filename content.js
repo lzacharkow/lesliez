@@ -62,12 +62,54 @@ module.exports = {
 			id: 'opower',
 			groupName: "Opower",
 			desc: "UX Design & Development",
-			role: "My role at opower",
+			role: fs.readFileSync('./content/roles/opower.html'),
+			org: [
+				{
+					name: "UX Designers"
+				}, {
+					name: "UX Researchers"
+				}, {
+					name: "UX Designer / Developers",
+					me: true
+				}, {
+					name: "Engineers"
+				}
+			],
+			moreProjects: {
+				hide: true
+			},
 			projects: [
 				{
 					id: 'energy-widgets',
-					title: "Energy widgets",
-					content: "These are the energy widgets."
+					title: "Opower Energy Widgets",
+					subtitle: "Opower Case Study",
+					details: [
+						{
+							title: "About this Project",
+							items: [
+								"Role: UX Design & Development",
+								"Company: Opower",
+								"Timeframe: Fall 2015-Spring 2016"
+							]
+						}, {
+							title: "My Contributions",
+							items: [
+								"UX Design",
+								"Visual Design",
+								"Front-end Development"
+							]
+						}, {
+							title: "Team",
+							items: [
+								"Marina Posniak, UX Writer",
+								"Jim Jones, Visual Designer",
+								"Aaron Stevens, UX Designer",
+								"Salmon Suhail, Product Mgr",
+								"Justin Secor, UX Development Mgr"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/opower/energy-widgets.html')
 				}
 			]
 		},
@@ -83,7 +125,7 @@ module.exports = {
 				}, {
 					name: "Creative"
 				}, {
-					name: "Dev"
+					name: "Engineering"
 				}, {
 					name: "Analytics"
 				}

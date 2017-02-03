@@ -118,6 +118,7 @@ $navigation-arrow-width: 27px + $spacing;
 	@include size(160px);
 	@include get-font-size(1);
 	margin: $half-spacing;
+	padding: $quarter-spacing;
 	border-radius: 200px;
 	border: 4px solid $lightest-gray;
 	text-align: center;
@@ -134,12 +135,12 @@ $navigation-arrow-width: 27px + $spacing;
 	span {
 		@include position(absolute, 50% $half-spacing null $half-spacing);
 		@include transform(translateY(-50%));
+		@include get-font-size(0.75);
 	  	display: inline-block;
 	}
 
 	@media #{$small} {
 		@include size(120px);
-		@include get-font-size(0.75);
 	}
 }
 

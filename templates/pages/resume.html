@@ -16,7 +16,7 @@
 			<li class="items__item">
 				<a class="item__title" href="{{item.link}}" target="_blank">{{ item.label }}</a>
 				<div class="item__job-title">{{ item.title }}</div>
-				<div class="item__dates">{{ item.dates }}</div>
+				<div class="item__dates">{{ item.dates | safe }}</div>
 			</li>
 			{% endfor %}
 		</ul>

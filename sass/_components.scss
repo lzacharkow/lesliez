@@ -13,10 +13,16 @@ $mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
 	img {
 		width: 100%;
 		display: inline-block;
-		@include get-shadow-color($img-shadow-color);
+		&:not(.img--no-shadow) {
+			@include get-shadow-color($img-shadow-color);
+		}
 
 		&.img--small {
 			max-width: 600px;
+		}
+
+		&.img--smaller {
+			max-width: 300px;
 		}
 	}
 
@@ -35,12 +41,15 @@ $mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
 	display: inline-block;
 	@include size(100% 500px);
 	@include get-shadow-color(rgba(0,0,0,.1));
+	@include transition(box-shadow $transition-speed-faster);
 	overflow-y: hidden;
 
-	&:hover {
+	&:not(.no-scroll):hover {
 		overflow-y: scroll;
+		@include get-shadow-color(rgba(0,0,0,.2));
 		@media #{$small} {
 			overflow-y: hidden;
+			@include get-shadow-color(rgba(0,0,0,.1));
 		}
 	}
 
