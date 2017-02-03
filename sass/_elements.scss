@@ -95,6 +95,10 @@ b {
 	font-weight: bold;
 }
 
+i {
+	font-style: italic;
+}
+
 ol, ul {
 	@extend %base-element-padding;
 	@include get-font-size(1);

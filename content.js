@@ -146,14 +146,13 @@ module.exports = {
 							items: [
 								"Prod Mgmt & UX",
 								"Urban Outfitters",
-								"Spring 2010"
+								"Spring 2014"
 							]
 						}, {
 							title: "My Contributions",
 							items: [
 								"Research",
 								"Wireframing",
-								"Prototyping",
 								"Feature roadmap",
 								"Developer support"
 							]
@@ -176,8 +175,41 @@ module.exports = {
 				},
 				{
 					id: 'navigation',
-					title: "Navigation & Taxonomy",
-					content: "This is the navigation content."
+					title: "Taxonomy & Navigation",
+					subtitle: "Urban Outfitters Case Study",
+					details: [
+						{
+							title: "About this Project",
+							items: [
+								"Prod Mgmt & UX",
+								"Urban Outfitters",
+								"Summer - Fall 2014"
+							]
+						}, {
+							title: "My Contributions",
+							items: [
+								"Research",
+								"Wireframing",
+								"Prototyping",
+								"Quantitative studies",
+								"Developer support"
+							]
+						}, {
+							title: "Team",
+							items: [
+								"Mika Osborn, Visual Design",
+								"Mike Pitone, UX Director",
+								"Matt Owen, Creative Director",
+								"Cheryl Schimpf, Front-end Dev Mgr"
+							]
+						}, {
+							title: "Links",
+							items: [
+								'<a href="http://www.urbanoutfitters.com" target="_blank">Live product</a>'
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/uo/navigation.html')
 				}
 			]
 		},

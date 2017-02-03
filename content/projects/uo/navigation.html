@@ -1,0 +1,146 @@
+<h2>Background</h2>
+
+<p class="headline">Urban Outfitters' product catalogue was diversifying and deepening.</p>
+
+<p>They were buying and producing a wider range of products, and simultaneously expanding the product offering within every category. This meant that in addition to adding a new <i>products</i> (ie. Kimonos), they wanted to expose more <i>varieties</i> of each product (ie. Midi, mini, and maxi skirts).</p>
+
+<p>Our team needed to find ways to allow customers to easily traverse this wider and deeper product catalogue.</p>
+
+<hr>
+
+<h2>The Prompt</h2>
+
+<p>At its core, this was an information architecture challenge. On top of that, the website's navigation couldn't support more than one level of categorization. The web merchandising team that was responsible for adding new products to the website were pressured to add every new type of product directly into the navigation.</p>
+
+<p>These factors contributed to what I later called the "Mega Nav", a big drawer of links that a user would encounter when they hovered on a top level vertical like Women's.</p>
+
+<div class="img-wrapper">
+	<img class="img--small" src="/img/uo-nav-mega.png">
+</div>
+
+<p class="caption">Prior navigation and taxonomy (ie. Mega Nav).</p>
+
+<p>You'll also notice that the navigation was being treated as a marketing tool. It showed as many product categories as it did weekly trends and exclusives.</p>
+
+<p>The reason for this marketing focus was that the brand invested heavily in its weekly campaigns and most customers would rarely see them. These campaigns lived on "gateway pages" that could be accessed by clicking a top level vertical like Women's. But hovering comes before clicking, and the Mega Nav would appear and drive customers into product categories without ever reaching a gateway page.</p>
+
+<p>Links to weekly trends and exclusives were added into the navigation as an attempt to gain exposure, but the result was an overwhelming tray of links that harmed the user experience. We needed a better way to expose products <i>and</i> stories in the most appropriate and understandable way.</p>
+
+<hr>
+
+<h2>Goals</h2>
+
+<ol>
+	<li>Create a simple, logical taxonomy.</li>
+	<li>Support all types of shopping.</li>
+	<li>Promote weekly campaigns.</li>
+</ol>
+
+<hr>
+
+<h2>Defining a Taxonomy</h2>
+
+<p>The first step was to define a new taxonomy that shoppers would understand. This began by defining product categories–something that Urban Outfitters was clearly missing.</p>
+
+<p>In order to define categories, I began by running a series of remote open card sorts through Optimal Workshop. I worked with web merchandisers from each vertical (Men's, Women's, Apartment, Music, and Beauty) to choose ~40 products that best represented the product range in each department. Then, I chose one image of each product that most clearly represented what it was. Participants were asked to sort these images into groups and give each group a name.</p>
+
+<div class="img-wrapper">
+	<img class="img--no-shadow img--small" src="/img/uo-nav-cardsort.png">
+</div>
+
+<p class="caption">An open card sort in progress.</p>
+
+<p>I sorted through the results to find common names or intentions and come up with a proposed taxonomy for each department, which I reviewed with the web merchandisers in each department.</p>
+
+<p>Next, I tested the new and old taxonomies in remote tree tests through Optimal Workshop. A new set of participants were shown a series of images and asked where they might find each one in the navigation. This allowed me to compare how quickly and directly customers could discover items in the new taxonomy vs the old.</p>
+
+<div class="img-wrapper">
+	<img class="img--small" src="/img/uo-nav-treetest.png">
+</div>
+
+<p class="caption">A tree test in progress.</p>
+
+<h3>Results</h3>
+
+<p class="headline">On average, participants chose the correct category of an item ~12% more often in the new taxonomy than they did in the previous one.</p>
+
+<p>The departments that benefited most from the heirarchy in the new taxonomy were Women's and Men's, where top-level categories like Tops and Bottoms were fairly universally understood. However, departments like Apartment did not benefit as much, seeing some products drop significantly in discoverability. This was an important thing to consider when we designed the new navigation.</p>
+
+<p><i>Individuals in each study were invited to participate if they had recently used the website and fit within the demographic for each study (For example: Only female respondents could take the Women's card sort).</i></p>
+
+<hr>
+
+<h2>Designing the Navigation</h2>
+
+<p>While the taxonomy was being perfected in a shared Google doc between web merchandisers, buyers, and product developers, I set to work on the design of the new navigation. It would need to support three tiers of categorization, and three types of shoppers.</p>
+
+<h3>Three Tiers of Categories</h3>
+<p>The new taxonomy contained 3 levels of heirarchy in each department: <b>top-level categories</b>, <b>sub-categories</b>, and <b>styles</b>. The spreadsheet below shows the top level categories in grey, the sub-categories listed beneath them, and the number of styles within each sub-category denoted by a number.</p>
+
+<div class="img-wrapper">
+	<img class="img--no-shadow" src="/img/uo-nav-workingtaxo.png">
+</div>
+
+<p class="caption">A draft of the Women's taxonomy (don't mind the green).</p>
+
+<h3>Three Types of Shoppers</h3>
+<p>In addition to supporting a new heirarchy, the new navigation needed to support these key types of customers:</p>
+
+<ul>
+	<li><b>Targeted shoppers</b>: Customers that know exactly what type of product they want.</li>
+	<li><b>Browsing shoppers</b>: Customers that have an idea of what they're looking for (ie. A dress), but they aren't sure exactly what kind of product they want (ie. A shift dress).</li>
+	<li><b>Inspirational shoppers</b>: Customers without a product in mind, who come to Urban Outfitters for shopping inspiration. This type of customer might be referred to as a "window shopper" in traditional retail. They find inspiration in our weekly campaigns and purchase into a trend or lifestyle.</li>
+</ul>
+
+<p>These considerations led to many wireframes which were narrowed into two main concepts. The examples here will focus on the desktop experience because it was responsible the overwhelming majority of sales.</p>
+
+<h3>Concept 1: Improved Mega Nav</h3>
+
+<div class="img-wrapper">
+	<img class="img--small img--no-shadow" src="/img/uo-nav-donsnav.png">
+</div>
+
+<p>Considering that the product assortment in some departments didn't fold nicely into a limited set of categories, this navigation was a safe choice. This navigation allowed some departments to use as many top-level categories as they wanted. In addition, this design would handle translations well and expand as needed.</p>
+
+<p>However, this navigation had similar problems as the original Mega Nav, where it allowed possibly of perhaps too many top-level categories. Without oversight, this navigation might stumble into the same pitfalls as the last one. Furthermore, this navigation would defer users away from the gateway pages just as the last design had.</p>
+
+<h3>Concept 2: Consolidated Nav</h3>
+
+<div class="img-wrapper">
+	<img src="/img/uo-nav-newnav.gif">
+</div>
+
+<p>This navigation was designed with the intent of driving more customers to gateway pages before exploring categories. Once within a department, categories are displayed directly on the page. Shoppers can browse top-level categories, and targeted shoppers can skip directly to a specific type of product through sub-category dropdowns. Once within a category, the navigation highlights the current department and category to help users retrace their steps, and to help users that enter the site through category or product pages find their place.</p>
+
+<p>The decision to prevent users from hovering on the nav to go directly into categories sparked a long debate. Some thought that forcing users to click into gateways would make them leave the site. On the other hand, exposing the gateway pages was a high priority. To help make this decision, I prototyped two versions of the nav–one with a hover state, and one without. The <a href="http://lesliez.com/uo-hover-nav/index.html" target="_blank">prototype</a> helped us discover a usability issue, below, which helped us choose the non-hover design to ship.</p>
+
+<div class="img-wrapper">
+	<img src="/img/uo-nav-newnav-bug.gif">
+</div>
+
+<p class="caption">When moving between department links (above) and categories (below), it's easy to accidentally hover on another department on the way to the category.</p>
+
+<p>The team decided to move forward with this design, and it shipped in the Fall of 2014.</p>
+
+<hr>
+
+<h2>Final Product & Results</h2>
+
+<div class="img-wrapper img-wrapper--composite">
+	<div class="img-wrapper__scrollable-wrapper">
+		<div class="scrollable-img scrollable-img--desktop no-scroll">
+			<img src="/img/uo-nav-d.png">
+		</div>
+		<div class="scrollable-img scrollable-img--tablet no-scroll">
+			<img src="/img/uo-nav-t.png">
+		</div>
+		<div class="scrollable-img scrollable-img--mobile no-scroll">
+			<img src="/img/uo-nav-m.png">
+		</div>
+	</div>
+</div>
+
+<p class="headline">After the new navigation was launched, the number of categories viewed per session increased, and gateways recieved 26% more traffic.</p>
+
+<p>In addition, the new navigation was fairly static and good for SEO. Categories gained higher ranks over time and more sub-categories were available to be indexed by search engines.</p>
+

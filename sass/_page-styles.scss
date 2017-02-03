@@ -3,3 +3,10 @@
 		"pages/project-index",
 		"pages/resume",
 		"pages/about";
+
+.about,
+.projects {
+	.page__block {
+		max-width: $page-max-width-large;
+	}
+}

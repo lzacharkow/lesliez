@@ -43,6 +43,7 @@ $mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
 	@include get-shadow-color(rgba(0,0,0,.1));
 	@include transition(box-shadow $transition-speed-faster);
 	overflow-y: hidden;
+	border-radius: 3px;
 
 	&:not(.no-scroll):hover {
 		overflow-y: scroll;
