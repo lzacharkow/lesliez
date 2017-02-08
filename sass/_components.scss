@@ -1,106 +1,129 @@
-$desktop-img-width: 80%;
-$desktop-img-height: 420px;
-
-$tablet-img-width: $desktop-img-width/2;
-$tablet-img-top-pos: $spacing;
-
-$mobile-img-width: $desktop-img-width/4;
-$mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
-
-.img-wrapper {
-	text-align: center;
-
-	img {
-		width: 100%;
-		display: inline-block;
-		&:not(.img--no-shadow) {
-			@include get-shadow-color($img-shadow-color);
-		}
-
-		&.img--small {
-			max-width: 600px;
-		}
-
-		&.img--smaller {
-			max-width: 300px;
-		}
-	}
-
-	iframe {
-		@include size(100% 400px);
-		@media #{$small} {
-			@include size(100% 200px);
-		}
-	}
-
-	&.img-wrapper--composite {
-		padding-bottom: $tablet-img-top-pos*2;
-	}
-
-	.cycle-slideshow {
-		position: relative;
-		margin: 0 auto;
-	}
-
-	.cycle-slideshow--small {
-		max-width: 600px;
-	}
-
-	+ .img-wrapper {
-		margin-top: $spacing*1.5;
-	}
+$logo-size: 100px;
+@media #{$small} {
+	$logo-size: 60px;
 }
 
-.img-wrapper__scrollable-wrapper {
-	position: relative;
+.page-wrapper {
+	padding-top: $spacing;
+	@include clearfix;
+}
+
+.page__navigation {
 	width: 100%;
-	text-align: left;
+	max-width: 460px;
+	display: flex;
+    justify-content: space-around;
+    margin: 0px auto ($spacing + $logo-size/2) auto;
+    a {
+    	display: inline-block;
+		padding: $half-spacing;
+    }
 }
 
-.scrollable-img {
-	display: inline-block;
-	@include size(100% 500px);
-	@include get-shadow-color(rgba(0,0,0,.1));
-	@include transition(box-shadow $transition-speed-faster);
-	overflow-y: hidden;
-	border-radius: 3px;
+.page__header {
+	text-align: center;
+	margin-bottom: $spacing*2;
+	@media #{$small} {
+		margin-bottom: $spacing*1.5;
+	}
+}
 
-	&:not(.no-scroll):hover {
-		overflow-y: scroll;
-		@include get-shadow-color(rgba(0,0,0,.2));
-		@media #{$small} {
-			overflow-y: hidden;
-			@include get-shadow-color(rgba(0,0,0,.1));
-		}
+.page__header__logo {
+	@include position(absolute, $logo-size*-0.5 0px null 0px);
+	@include size($logo-size);
+	@include transition(background $transition-speed*2);
+	margin: 0 auto;
+	padding: 10px;
+	background: $pink;
+	border-radius: $logo-size/2;
+	&:hover {
+		background: $link-color-hover;
 	}
 
 	img {
 		display: block;
-		box-shadow: none;
+		margin: 0 auto;
+		@include size(100%);
 	}
+}
+
+.page__header__title {
+	margin-top: $spacing;
+	@media #{$small} {
+		margin-top: $half-spacing;
+	}
+}
+
+.page__block {
+	max-width: $page-max-width-small;
+	margin: 0 auto;
+	position: relative;
+	background: $white;
+	border-radius: 2px;
+	@include get-shadow-color(rgba($pink, 0.3));
+
+	+ .page__block {
+		margin-top: $spacing*4;
+		@media #{$small} {
+			margin-top: $spacing*3;
+		}
+	}
+}
+
+.page__block--main {
+	padding: $logo-size/2 0 $spacing*4 0;
+	@media #{$small} {
+		padding-bottom: $spacing*3;
+	}
+}
+
+.page__block--role {
+	padding: $spacing*4 0;
+	@media #{$small} {
+		padding: $spacing*3 0;
+	}
+}
+
+.block__footer {
+	margin-top: $spacing*3;
+	@extend %base-element-padding;
+	padding-top: $spacing*2;
+	padding-bottom: $spacing*2;
+	border-top: 1px dashed $divider-color;
+	position: relative;
+	text-align: center;
 
 	@media #{$small} {
-		@include size(100% 300px);
-	}
-
-	&.no-scroll {
-		overflow-y: hidden;
+		margin-top: $spacing*2;
 	}
 }
 
-.scrollable-img--desktop {
-	@include size($desktop-img-width $desktop-img-height);
-	@media #{$small} {
-		height: $desktop-img-height/2;
+$footer-logo-size: 50px;
+$footer-logo-padding: $half-spacing;
+$footer-padding: $spacing;
+$footer-height: ($footer-logo-size + $footer-logo-padding*2) + $footer-padding*2;
+
+@include sticky-footer(
+	$footer-height,
+	'.page-wrapper',
+	'.page',
+	'.footer'
+);
+
+.footer {
+	padding: $footer-padding;
+	text-align: center;
+	@include user-select(none);
+}
+
+.footer__logo {
+	padding: $footer-logo-padding;
+	display: inline-block;
+	background: $bg-color;
+	border-radius: $footer-logo-size/2 + $footer-logo-padding;
+	img {
+		@include size($footer-logo-size);
+		display: block;
+		opacity: 0.6;
 	}
-}
-
-.scrollable-img--mobile {
-	@include size($mobile-img-width 75%);
-	@include position(absolute, null $mobile-img-right-pos $tablet-img-top-pos*-2 null);
-}
-
-.scrollable-img--tablet {
-	@include size($tablet-img-width 100%);
-	@include position(absolute, $tablet-img-top-pos 0% null null);
 }
