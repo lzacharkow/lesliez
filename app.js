@@ -14,6 +14,9 @@ const content = require('./content.js');
 
 
 // SCSS
+// NOTE: If changing css, change stylesheet src to "/styles.css",
+//       and before launching site, revert it back to "/css/styles.css".
+
 app.use(
     sassMiddleware({
         src: __dirname + '/sass',

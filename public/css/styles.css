@@ -71,9 +71,9 @@ html {
       font-size: 20px; } }
 
 a {
-  -webkit-transition: color, 0.4s;
-  -moz-transition: color, 0.4s;
-  transition: color, 0.4s;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  transition: color 0.4s;
   color: #DAA49A;
   font-weight: bold;
   text-decoration: none; }
@@ -240,6 +240,87 @@ hr {
         .group__items .items__item + .items__item {
           margin-top: 10px; } }
 
+.img-wrapper {
+  text-align: center; }
+  .img-wrapper img {
+    width: 100%;
+    display: inline-block; }
+    .img-wrapper img:not(.img--no-shadow) {
+      box-shadow: 0px 2px 20px #ECEBE4; }
+    .img-wrapper img.img--small {
+      max-width: 600px; }
+    .img-wrapper img.img--smaller {
+      max-width: 300px; }
+  .img-wrapper iframe {
+    height: 400px;
+    width: 100%; }
+    @media only screen and (max-width: 640px) {
+      .img-wrapper iframe {
+        height: 200px;
+        width: 100%; } }
+  .img-wrapper.img-wrapper--composite {
+    padding-bottom: 40px; }
+  .img-wrapper .cycle-slideshow {
+    position: relative;
+    margin: 0 auto; }
+  .img-wrapper .cycle-slideshow--small {
+    max-width: 600px; }
+  .img-wrapper + .img-wrapper {
+    margin-top: 30px; }
+
+.img-wrapper__scrollable-wrapper {
+  position: relative;
+  width: 100%;
+  text-align: left; }
+
+.scrollable-img {
+  display: inline-block;
+  height: 500px;
+  width: 100%;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  -webkit-transition: box-shadow 0.2s;
+  -moz-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  overflow-y: hidden;
+  border-radius: 3px; }
+  .scrollable-img:not(.no-scroll):hover {
+    overflow-y: scroll;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2); }
+    @media only screen and (max-width: 640px) {
+      .scrollable-img:not(.no-scroll):hover {
+        overflow-y: hidden;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1); } }
+  .scrollable-img img {
+    display: block;
+    box-shadow: none; }
+  @media only screen and (max-width: 640px) {
+    .scrollable-img {
+      height: 300px;
+      width: 100%; } }
+  .scrollable-img.no-scroll {
+    overflow-y: hidden; }
+
+.scrollable-img--desktop {
+  height: 420px;
+  width: 80%; }
+  @media only screen and (max-width: 640px) {
+    .scrollable-img--desktop {
+      height: 210px; } }
+
+.scrollable-img--mobile {
+  height: 75%;
+  width: 20%;
+  position: absolute;
+  right: 30%;
+  bottom: -40px; }
+
+.scrollable-img--tablet {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  top: 20px;
+  right: 0%; }
+
 .page-wrapper {
   padding-top: 20px; }
   .page-wrapper:after {
@@ -364,87 +445,6 @@ body {
     width: 50px;
     display: block;
     opacity: 0.6; }
-
-.img-wrapper {
-  text-align: center; }
-  .img-wrapper img {
-    width: 100%;
-    display: inline-block; }
-    .img-wrapper img:not(.img--no-shadow) {
-      box-shadow: 0px 2px 20px #ECEBE4; }
-    .img-wrapper img.img--small {
-      max-width: 600px; }
-    .img-wrapper img.img--smaller {
-      max-width: 300px; }
-  .img-wrapper iframe {
-    height: 400px;
-    width: 100%; }
-    @media only screen and (max-width: 640px) {
-      .img-wrapper iframe {
-        height: 200px;
-        width: 100%; } }
-  .img-wrapper.img-wrapper--composite {
-    padding-bottom: 40px; }
-  .img-wrapper .cycle-slideshow {
-    position: relative;
-    margin: 0 auto; }
-  .img-wrapper .cycle-slideshow--small {
-    max-width: 600px; }
-  .img-wrapper + .img-wrapper {
-    margin-top: 30px; }
-
-.img-wrapper__scrollable-wrapper {
-  position: relative;
-  width: 100%;
-  text-align: left; }
-
-.scrollable-img {
-  display: inline-block;
-  height: 500px;
-  width: 100%;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-  -webkit-transition: box-shadow 0.2s;
-  -moz-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  overflow-y: hidden;
-  border-radius: 3px; }
-  .scrollable-img:not(.no-scroll):hover {
-    overflow-y: scroll;
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2); }
-    @media only screen and (max-width: 640px) {
-      .scrollable-img:not(.no-scroll):hover {
-        overflow-y: hidden;
-        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1); } }
-  .scrollable-img img {
-    display: block;
-    box-shadow: none; }
-  @media only screen and (max-width: 640px) {
-    .scrollable-img {
-      height: 300px;
-      width: 100%; } }
-  .scrollable-img.no-scroll {
-    overflow-y: hidden; }
-
-.scrollable-img--desktop {
-  height: 420px;
-  width: 80%; }
-  @media only screen and (max-width: 640px) {
-    .scrollable-img--desktop {
-      height: 210px; } }
-
-.scrollable-img--mobile {
-  height: 75%;
-  width: 20%;
-  position: absolute;
-  right: 30%;
-  bottom: -40px; }
-
-.scrollable-img--tablet {
-  height: 100%;
-  width: 40%;
-  position: absolute;
-  top: 20px;
-  right: 0%; }
 
 .projects .page__block--main {
   padding-bottom: 0; }
