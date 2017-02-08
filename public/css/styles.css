@@ -232,11 +232,13 @@ hr {
   list-style: none; }
   .group__items:last-child {
     margin-right: 0; }
-  .group__items .items__item + .items__item {
-    margin-top: 20px; }
-    @media only screen and (max-width: 640px) {
-      .group__items .items__item + .items__item {
-        margin-top: 10px; } }
+  .group__items .items__item {
+    padding: 0; }
+    .group__items .items__item + .items__item {
+      margin-top: 20px; }
+      @media only screen and (max-width: 640px) {
+        .group__items .items__item + .items__item {
+          margin-top: 10px; } }
 
 .page-wrapper {
   padding-top: 20px; }
@@ -361,7 +363,7 @@ body {
     height: 50px;
     width: 50px;
     display: block;
-    opacity: 0.5; }
+    opacity: 0.6; }
 
 .img-wrapper {
   text-align: center; }
@@ -374,8 +376,22 @@ body {
       max-width: 600px; }
     .img-wrapper img.img--smaller {
       max-width: 300px; }
+  .img-wrapper iframe {
+    height: 400px;
+    width: 100%; }
+    @media only screen and (max-width: 640px) {
+      .img-wrapper iframe {
+        height: 200px;
+        width: 100%; } }
   .img-wrapper.img-wrapper--composite {
     padding-bottom: 40px; }
+  .img-wrapper .cycle-slideshow {
+    position: relative;
+    margin: 0 auto; }
+  .img-wrapper .cycle-slideshow--small {
+    max-width: 600px; }
+  .img-wrapper + .img-wrapper {
+    margin-top: 30px; }
 
 .img-wrapper__scrollable-wrapper {
   position: relative;
@@ -577,6 +593,10 @@ body {
   @media only screen and (max-width: 640px) {
     .home .page__block--main {
       padding-bottom: 60px; } }
+  .home .page__block--main .caption {
+    font-style: normal; }
+    .home .page__block--main .caption span {
+      vertical-align: middle; }
 
 .project-index .group__items {
   color: #DAA49A; }
@@ -613,6 +633,10 @@ body {
     .resume .group__items,
     .writing .group__items {
       width: 100%; } }
+
+.resume .items__item + .items__item,
+.writing .items__item + .items__item {
+  margin-top: 30px; }
 
 @media only screen and (max-width: 640px) {
   .resume .items__item,

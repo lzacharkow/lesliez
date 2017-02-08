@@ -54,7 +54,28 @@ module.exports = {
 					id: 'tabby-cat',
 					title: "Tabby Cat",
 					subtitle: "A Chrome Extension",
-					content: "This ma shit."
+					details: [
+					 	{
+							title: "Project scope",
+							items: [
+								"Design",
+								"Illustration",
+								"Engineering"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Created January 2016",
+								"Development ongoing"
+							]
+						}, {
+							title: "Links",
+							items: [
+								'<a href="https://chrome.google.com/webstore/detail/mefhakmgclhhfbdadeojlkbllmecialg" target="_blank">Chrome Web Store</a>'
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/side-projects/tabby-cat.html')
 				}
 			]
 		},
@@ -217,22 +238,80 @@ module.exports = {
 			id: 'gdi',
 			groupName: "Girl Develop It!",
 			desc: "Freelance Illustration & Graphic Design",
-			role: "My role at GDI",
+			role: fs.readFileSync('./content/roles/gdi.html'),
 			projects: [
 				{
 					id: 'infographic',
-					title: "5th Anniversary Infographic",
-					content: "This is the infographic."
+					title: "Five Year Infographic",
+					details: [
+						{
+							title: "Company",
+							items: [
+								"Girl Develop It!"
+							]
+						}, {
+							title: "Project scope",
+							items: [
+								"Content strategy",
+								"Design",
+								"Illustration"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Summer 2015"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/gdi/infographic.html')
 				},
 				{
 					id: 'business-cards',
 					title: "Team Business Cards",
-					content: "These are the business cards."
+					details: [
+						{
+							title: "Company",
+							items: [
+								"Girl Develop It!"
+							]
+						}, {
+							title: "Project scope",
+							items: [
+								"Design",
+								"Illustration"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Summer 2016"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/gdi/business-cards.html')
 				},
 				{
 					id: 'summit-logo',
 					title: "2016 Summit Logo",
-					content: "This is the summit logo."
+					details: [
+						{
+							title: "Company",
+							items: [
+								"Girl Develop It!"
+							]
+						}, {
+							title: "Project scope",
+							items: [
+								"Design",
+								"Illustration"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Fall 2016"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/gdi/summit-logo.html')
 				}
 			]
 		},
@@ -243,17 +322,85 @@ module.exports = {
 				{
 					id: 'cyclista',
 					title: "Cyclista",
-					content: "This is the infographic."
+					details: [
+						{
+							title: "Project details",
+							items: [
+								"Industrial Design senior thesis project"
+							]
+						}, {
+							title: "Scope of work",
+							items: [
+								"Product design",
+								"Fabrication",
+								"Graphic design"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Spring 2012"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/various/cyclista.html')
 				},
 				{
-					id: 'cardar',
-					title: "Cardar App",
-					content: "These are the business cards."
+					id: 'flora-catalogus',
+					title: "Flora Catalogus",
+					details: [
+						{
+							title: "Project details",
+							items: [
+								'Art installation for <a href="http://datagarden.org/5665/the-switched-on-garden-002/" target="_blank">The Switched-on Garden 002</a>'
+							]
+						}, {
+							title: "Scope of work",
+							items: [
+								"Installation design",
+								"Fabrication"
+							]
+						}, {
+							title: "Collaborators",
+							items: [
+								"Kyle Stetz, Software engineering"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Fall 2012"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/various/flora-catalogus.html')
 				},
 				{
 					id: 'trestleator',
 					title: "The Trestleator",
-					content: "This is the summit logo."
+					details: [
+						{
+							title: "Project details",
+							items: [
+								'Projection installation and mobile app commissioned by <a href="http://www.thetrestleinn.com/" target="_blank">The Trestle Inn</a>'
+							]
+						}, {
+							title: "Scope of work",
+							items: [
+								"App design"
+							]
+						}, {
+							title: "Collaborators",
+							items: [
+								"Kyle Stetz, Software engineering",
+								"Kerry Gilbert, Software engineering"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Winter 2013"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/various/trestleator.html')
 				}
 			]
 		}

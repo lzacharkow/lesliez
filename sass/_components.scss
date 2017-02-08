@@ -26,8 +26,28 @@ $mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
 		}
 	}
 
+	iframe {
+		@include size(100% 400px);
+		@media #{$small} {
+			@include size(100% 200px);
+		}
+	}
+
 	&.img-wrapper--composite {
 		padding-bottom: $tablet-img-top-pos*2;
+	}
+
+	.cycle-slideshow {
+		position: relative;
+		margin: 0 auto;
+	}
+
+	.cycle-slideshow--small {
+		max-width: 600px;
+	}
+
+	+ .img-wrapper {
+		margin-top: $spacing*1.5;
 	}
 }
 

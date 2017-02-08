@@ -16,6 +16,10 @@
 	}
 
 	.items__item {
+		+ .items__item {
+			margin-top: $spacing*1.5;
+		}
+
 		@media #{$small} {
 			margin-top: $spacing;
 			+ .items__item {

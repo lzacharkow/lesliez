@@ -219,6 +219,7 @@ hr {
 	list-style: none;
 
 	.items__item {
+		padding: 0;
 
 		+ .items__item {
 			margin-top: $spacing;

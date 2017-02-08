@@ -124,7 +124,7 @@ $footer-height: ($footer-logo-size + $footer-logo-padding*2) + $footer-padding*2
 	img {
 		@include size($footer-logo-size);
 		display: block;
-		opacity: 0.5;
+		opacity: 0.6;
 	}
 }
 

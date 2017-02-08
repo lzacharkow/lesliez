@@ -1,4 +1,6 @@
 {% set title = "Projects" %}
+{% set useJs = true %}
+{% set pagetitle = project.title %}
 {% set page = "projects" %}
 {% extends "../layout.html" %}
 
@@ -66,15 +68,16 @@
 	</div>
 {% endblock %}
 
-{% if group.role %}
 {% block extraContent %}
+{% if group.role %}
 
 	<div class="page__block page__block--role" id="role">
 
-		<h2>More about {{ group.groupName }}</h2>
+		<h2>More about my role @ {{ group.groupName }}</h2>
 
 		{{ group.role | safe }}
 
+		{% if group.org %}
 		<div class="org-chart">
 			{% for dept in group.org %}
 				<div class="org-chart__dept{% if dept.me %} org-chart__dept--me{% endif %}">
@@ -83,6 +86,7 @@
 			{% endfor %}
 		</div>
 		<p class="caption">The organization at {{ group.groupName }}.</p>
+		{% endif %}
 
 		{% if not group.moreProjects.hide %}
 		<hr>
@@ -105,5 +109,5 @@
 
 	</div>
 
-{% endblock %}
 {% endif %}
+{% endblock %}

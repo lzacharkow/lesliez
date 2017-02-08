@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{ title }}</title>
+    <meta charset="utf-8">
+	<title>{{ pagetitle }}</title>
+	<meta name="description" content="Leslie Zacharkow is a designer, developer, and cat technologist in Berkeley, California." />
 	<link rel="stylesheet" type="text/css" href="/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/img/favicon.png">
+	<meta property="og:image" content="/img/og-image.png"/>
+	<meta name="twitter:image" content="/img/og-image.png"/>
+	<meta property="og:title" content="Leslie's Portfolio Site"/>
+	<meta name="twitter:title" content="Leslie's Portfolio Site"/>
+	<meta property="og:description" content="Built with <3 and meows." />
+	<meta name="twitter:description" content="Built with <3 and meows."/>
+	<meta property="og:site_name" content="lesliez.com"/>
+	<meta property="og:url" content="http://lesliez.com"/>
+	<meta name="twitter:card" content="summary"/>
 </head>
 <body>
+
+<!-- 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈
+
+If you're wondering, I built my site with Node, Express, Nunjucks, and Sass. https://github.com/lzacharkow/lesliez
+
+🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 -->
 
 	<svg display="none" viewBox="0 0 27 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<symbol id="arrow">
@@ -25,28 +44,34 @@
 			<div class="page__block page__block--main">
 				<div class="page__header">
 					<div class="page__header__logo">
-						<a href="/"><img src="/img/logo_new.svg"></a>
+						<a href="/"><img src="/img/logo.svg"></a>
 					</div>
 					{% if title %}
 						<div class="page__header__title">{{ title }}</div>
 					{% endif %}
 				</div>
 				<div class="block__content">
-					{% block mainContent %}
-					{% endblock %}
+					{% block mainContent %}{% endblock %}
 				</div>
 			</div>
 
-			{% block extraContent %}
-			{% endblock %}
+			{% block extraContent %}{% endblock %}
+
 		</div>
 	</div>
 
 	<div class="footer">
 		<div class="footer__logo">
-			<img src="/img/logo_new.svg">
+			<img src="/img/logo.svg">
 		</div>
 	</div>
+
+	{% if useJs %}
+	<script type="text/javascript" src="/js/jquery-min.js" ></script>
+	<script type="text/javascript" src="/js/jquery-lazyload.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript" src="/js/cycle.js"></script>
+	{% endif %}
 
 </body>
 </html>

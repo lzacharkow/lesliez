@@ -3,4 +3,13 @@
 	@media #{$small} {
 		padding-bottom: $spacing*3;
 	}
+
+	.caption {
+		font-style: normal;
+		span {
+			vertical-align: middle;
+		}
+	}
 }
+
+
