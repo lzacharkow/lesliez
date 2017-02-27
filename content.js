@@ -407,6 +407,13 @@ module.exports = {
 	],
 	writing: [
 		{
+			name: "The Human in the Machine",
+			articles: [{
+				label: "The Productive Chicken and the Happy Egg",
+				link: "https://superyesmore.com/the-productive-chicken-and-the-happy-egg-3b142fe8fe03bb046ce0c4867189798e",
+				date: "February 2017"
+			}]
+		}, {
 			name: "24 ways",
 			articles: [{
 				label: "How to Make a Chrome Extension to Delight (or Troll) Your Friends",
