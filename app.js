@@ -36,7 +36,6 @@ const njk = expressNunjucks(app, {
     noCache: isDev
 });
 
-
 // ROUTES
 app.get('/styleguide', (req, res) => {
     res.render('pages/styleguide', {
@@ -48,9 +47,9 @@ app.get('/', (req, res) => {
     res.render('pages/home');
 });
 
-app.get('/about', (req, res) => {
-    res.render('pages/about');
-});
+// app.get('/about', (req, res) => {
+//     res.render('pages/about');
+// });
 
 app.get('/resume', (req, res) => {
     res.render('pages/resume', {

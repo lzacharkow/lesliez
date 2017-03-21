@@ -30,36 +30,42 @@
 %h1 {
 	@include get-font-size(2.2);
 	font-weight: bold;
-	font-family: $alt-font-family;
 }
 
 %h2 {
-	@include get-font-size(1.2);
+	@include get-font-size(1.6);
 	font-weight: bold;
 }
 
 %h3 {
-	@include get-font-size(1);
+	@include get-font-size(1.2);
 	font-weight: bold;
 }
 
 %h4 {
 	@include get-font-size(0.75);
-	font-style: italic;
+	font-weight: bold;
 }
 
 %p {
 	@include clearfix;
 	@include get-font-size(1);
+	font-family: $alt-font-family;
 }
 
 %tiny-text {
 	@include get-font-size(0.75);
+	font-family: $alt-font-family;
 }
 
 %headline {
 	@include get-font-size(1.6);
-	font-family: $alt-font-family;
+	font-family: $base-font-family;
+}
+
+%headline--small {
+	@include get-font-size(1.2);
+	font-family: $base-font-family;
 }
 
 
@@ -80,12 +86,12 @@ h3 				{ @extend %h3; }
 h4 				{ @extend %h4; }
 p 				{ @extend %p; }
 a 				{ @extend %a; }
-.headline 		{ @extend %headline; }
-.caption  		{ @extend %tiny-text; }
+p.headline 		{ @extend %headline; }
+p.headline--small 		{ @extend %headline--small; }
+p.caption  		{ @extend %tiny-text; }
 
 .caption {
 	text-align: center;
-	font-style: italic;
 	+ p {
 		margin-top: $spacing*2;
 	}
@@ -177,11 +183,7 @@ hr {
 .group-section {
 	@extend %base-element-padding;
 	@include outer-container;
-	padding-top: $spacing*1.5;
 	line-height: 1.4;
-	@media #{$small} {
-		padding-top: $spacing;
-	}
 
 	+ .group-section {
 		border-top: 1px dashed $divider-color;

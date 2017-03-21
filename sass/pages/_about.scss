@@ -6,10 +6,6 @@
 	@include outer-container;
 	@extend %base-element-padding;
 
-	padding-top: $spacing*1.5;
-	@media #{$small} {
-		padding-top: $spacing;
-	}
 	p {
 		padding: 0;
 	}
@@ -45,7 +41,11 @@
 
 .about__footer {
 	@extend .block__footer;
-	text-align: center;
+	padding-top: 0;
+	border: 0;
+	svg {
+		@include size(1.2em);
+	}
 	a {
 		padding: $half-spacing $spacing;
 		@media #{$small} {

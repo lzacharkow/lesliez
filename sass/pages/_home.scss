@@ -1,14 +1,18 @@
-.home .page__block--main {
-	padding-bottom: $spacing*5;
-	@media #{$small} {
-		padding-bottom: $spacing*3;
+.home .home__footer {
+	@extend %base-element-padding;
+	margin-top: $spacing*1.5;
+
+	a {
+		margin-right: $half-spacing;
+		padding: $quarter-spacing;
+		&:first-of-type {
+			padding-left: 0;
+		}
 	}
 
-	.caption {
-		font-style: normal;
-		span {
-			vertical-align: middle;
-		}
+	svg {
+		@include size(1.2em);
+		fill: currentColor;
 	}
 }
 

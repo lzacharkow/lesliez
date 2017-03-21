@@ -48,7 +48,7 @@ module.exports = {
 	projectGroups: [
 		{
 			id: 'side-projects',
-			groupName: "Side projects",
+			groupName: "Side Projects",
 			projects: [
 				{
 					id: 'tabby-cat',
@@ -106,13 +106,6 @@ module.exports = {
 					subtitle: "Opower Case Study",
 					details: [
 						{
-							title: "About this Project",
-							items: [
-								"Role: UX Design & Development",
-								"Company: Opower",
-								"Timeframe: Fall 2015-Spring 2016"
-							]
-						}, {
 							title: "My Contributions",
 							items: [
 								"UX Design",
@@ -127,6 +120,11 @@ module.exports = {
 								"Aaron Stevens, UX Designer",
 								"Salmon Suhail, Product Mgr",
 								"Justin Secor, UX Development Mgr"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Fall 2015-Spring 2016"
 							]
 						}
 					],
@@ -163,13 +161,6 @@ module.exports = {
 					subtitle: "Urban Outfitters Case Study",
 					details: [
 						{
-							title: "About this Project",
-							items: [
-								"Prod Mgmt & UX",
-								"Urban Outfitters",
-								"Spring 2014"
-							]
-						}, {
 							title: "My Contributions",
 							items: [
 								"Research",
@@ -186,6 +177,11 @@ module.exports = {
 								"Cheryl Schimpf, Front-end Dev Mgr"
 							]
 						}, {
+							title: "Date",
+							items: [
+								"Spring 2014"
+							]
+						}, {
 							title: "Links",
 							items: [
 								'<a href="http://www.urbanoutfitters.com/urban/catalog/productdetail.jsp?id=41149014&category=W-DRESSES-GOINGOUT" target="_blank">Live product</a>'
@@ -200,13 +196,6 @@ module.exports = {
 					subtitle: "Urban Outfitters Case Study",
 					details: [
 						{
-							title: "About this Project",
-							items: [
-								"Prod Mgmt & UX",
-								"Urban Outfitters",
-								"Summer - Fall 2014"
-							]
-						}, {
 							title: "My Contributions",
 							items: [
 								"Research",
@@ -224,6 +213,11 @@ module.exports = {
 								"Cheryl Schimpf, Front-end Dev Mgr"
 							]
 						}, {
+							title: "Date",
+							items: [
+								"Summer - Fall 2014"
+							]
+						}, {
 							title: "Links",
 							items: [
 								'<a href="http://www.urbanoutfitters.com" target="_blank">Live product</a>'
@@ -236,13 +230,14 @@ module.exports = {
 		},
 		{
 			id: 'gdi',
-			groupName: "Girl Develop It!",
+			groupName: "Girl Develop It",
 			desc: "Freelance Illustration & Graphic Design",
 			role: fs.readFileSync('./content/roles/gdi.html'),
 			projects: [
 				{
 					id: 'infographic',
 					title: "Five Year Infographic",
+					subtitle: "Freelance for Girl Develop It",
 					details: [
 						{
 							title: "Company",
@@ -268,6 +263,7 @@ module.exports = {
 				{
 					id: 'business-cards',
 					title: "Team Business Cards",
+					subtitle: "Freelance for Girl Develop It",
 					details: [
 						{
 							title: "Company",
@@ -292,6 +288,7 @@ module.exports = {
 				{
 					id: 'summit-logo',
 					title: "2016 Summit Logo",
+					subtitle: "Freelance for Girl Develop It",
 					details: [
 						{
 							title: "Company",
@@ -322,9 +319,10 @@ module.exports = {
 				{
 					id: 'cyclista',
 					title: "Cyclista",
+					subtitle: "Industrial Design Senior Thesis",
 					details: [
 						{
-							title: "Project details",
+							title: "About this project",
 							items: [
 								"Industrial Design senior thesis project"
 							]
@@ -347,9 +345,10 @@ module.exports = {
 				{
 					id: 'flora-catalogus',
 					title: "Flora Catalogus",
+					subtitle: "Digital Art Installation",
 					details: [
 						{
-							title: "Project details",
+							title: "About this project",
 							items: [
 								'Art installation for <a href="http://datagarden.org/5665/the-switched-on-garden-002/" target="_blank">The Switched-on Garden 002</a>'
 							]
@@ -376,9 +375,10 @@ module.exports = {
 				{
 					id: 'trestleator',
 					title: "The Trestleator",
+					subtitle: "Digital Art Installation",
 					details: [
 						{
-							title: "Project details",
+							title: "About this project",
 							items: [
 								'Projection installation and mobile app commissioned by <a href="http://www.thetrestleinn.com/" target="_blank">The Trestle Inn</a>'
 							]
@@ -414,7 +414,7 @@ module.exports = {
 				date: "February 2017"
 			}]
 		}, {
-			name: "24 ways",
+			name: "24ways.org",
 			articles: [{
 				label: "How to Make a Chrome Extension to Delight (or Troll) Your Friends",
 				link: "https://24ways.org/2016/how-to-make-a-chrome-extension/",

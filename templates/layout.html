@@ -31,25 +31,28 @@ If you're wondering, I built my site with Node, Express, Nunjucks, and Sass. htt
 		</symbol>
 	</svg>
 
-
 	<div class="page-wrapper">
 		<div class="page {{ page }}">
 			<div class="page__navigation">
-				<a href="/projects">Projects</a>
-				<a href="/about">About</a>
-				<a href="/resume">Resume</a>
-				<a href="/writing">Writing</a>
+				<a href="/" class="
+					{% if page == 'home' %}a--current-page
+					{% endif %}">Home</a>
+				<a href="/projects" class="
+					{% if page == 'projects' %}a--current-page
+					{% elif page == 'project-index' %}a--current-page
+					{% endif %}">Projects</a>
+<!-- 				<a href="/about" class="
+					{% if page == 'about' %}a--current-page
+					{% endif %}">About</a> -->
+				<a href="/resume" class="
+					{% if page == 'resume' %}a--current-page
+					{% endif %}">Resume</a>
+				<a href="/writing" class="
+					{% if page == 'writing' %}a--current-page
+					{% endif %}">Writing</a>
 			</div>
 
 			<div class="page__block page__block--main">
-				<div class="page__header">
-					<div class="page__header__logo">
-						<a href="/"><img src="/img/logo.svg"></a>
-					</div>
-					{% if title %}
-						<div class="page__header__title">{{ title }}</div>
-					{% endif %}
-				</div>
 				<div class="block__content">
 					{% block mainContent %}{% endblock %}
 				</div>

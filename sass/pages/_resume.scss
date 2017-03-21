@@ -27,14 +27,8 @@
 			}
 		}
 	}
+}
 
-	.item__job-title {
-		margin-top: $quarter-spacing;
-	}
-
-	.item__dates {
-		font-style: italic;
-		margin-top: $quarter-spacing;
-	}
-
+.resume .page__block {
+	padding-bottom: 0;
 }
