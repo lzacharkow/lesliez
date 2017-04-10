@@ -6,8 +6,8 @@
 
 // ------ Type Styles ------ //
 
-$base-font-family:	  'Rubik', sans-serif;
-$alt-font-family:     'Rubik', sans-serif;
+$base-font-family:	  'Libre Baskerville', serif;
+$alt-font-family:     'Rubik', serif;
 
 $font-size-small:     16px;
 $font-size-medium:    18px;
@@ -25,14 +25,16 @@ $light-gray:    #E1E0DA;
 $lightest-gray: #e5e4da;
 $pink:          #DAA49A;
 $light-pink:    #FFEBDE;
-$blue:          #C1E0F7;
+$blue:          #8CC2DD;
+$light-blue:	#eef5ff;
+$orange:		#EDAA9A;
 $white:         #FFFFFF;
 
 $font-color:        $dark-gray;
-$link-color:        $pink;
-$link-color-hover:  darken($pink, 8%);
+$link-color:        $blue;
+$link-color-hover:  $orange;
 $bg-color:          $light-pink;
-$divider-color:     $lightest-gray;
+$divider-color:     $orange;
 $img-shadow-color:  $lightest-gray;
 $bg-shadow-color:   $pink;
 

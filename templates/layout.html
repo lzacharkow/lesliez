@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 	<title>{{ pagetitle }}</title>
 	<meta name="description" content="Leslie is a designer, developer, and cat technologist in Berkeley, California." />
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="/img/favicon.png">
 	<meta property="og:image" content="http://lesliez.com/img/og-image.png"/>
@@ -25,9 +25,12 @@ If you're wondering, I built my site with Node, Express, Nunjucks, and Sass. htt
 
 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 -->
 
-	<svg display="none" viewBox="0 0 27 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18.7896214 16" style="enable-background:new 0 0 18.7896214 16;" xml:space="preserve">
 		<symbol id="arrow">
-			<path transform="translate(-330.000000, -325.000000)" d="M344.910451,325 C344.972057,327.168537 345.633883,329.581738 346.985699,331.547855 L330,331.547855 L330,334.453905 L346.99978,334.453905 C345.621562,336.467547 345.09703,338.660726 344.910451,341 C347.577118,337.720792 352.470407,334.585919 356.434323,333 C352.470407,331.343674 347.432783,328.388339 344.910451,325"></path>
+			<rect x="0.0000005" y="6.564764" width="18.9138031" height="2.9097066"/>
+			<path d="M17.2084007,2.4832547l7.8908195,4.0622787c1.2033806,0.6195135,1.2003994,2.3410249-0.0051212,2.9563651
+			l-7.9011154,4.0330057c-1.1543159,0.5892029-2.386344-0.6468582-1.7933712-1.799242l1.9237537-3.7386198l-1.9124517-3.7166553
+			C14.8168612,3.1259041,16.0540333,1.8889745,17.2084007,2.4832547z"/>
 		</symbol>
 	</svg>
 
@@ -49,7 +52,7 @@ If you're wondering, I built my site with Node, Express, Nunjucks, and Sass. htt
 					{% endif %}">Writing</a>
 			</div>
 
-			<div class="page__block page__block--main">
+			<div class="page__block">
 				<div class="block__content">
 					{% block mainContent %}{% endblock %}
 				</div>
@@ -57,12 +60,6 @@ If you're wondering, I built my site with Node, Express, Nunjucks, and Sass. htt
 
 			{% block extraContent %}{% endblock %}
 
-		</div>
-	</div>
-
-	<div class="footer">
-		<div class="footer__logo">
-			<img src="/img/logo.svg">
 		</div>
 	</div>
 

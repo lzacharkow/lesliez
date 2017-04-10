@@ -32,6 +32,12 @@
 
 	<hr>
 
+	<div class="project__body">
+		{{ project.content | safe }}
+	</div>
+
+	<hr>
+
 	<div class="project__details{% if project.details.length == 4 %} project__details--four{% endif %}">
 		{% for group in project.details %}
 			<div class="project__detail">
@@ -48,10 +54,6 @@
 	</div>
 
 	<hr>
-
-	<div class="project__body">
-		{{ project.content | safe }}
-	</div>
 
 	<div class="project__footer">
 		<div class="project__navigation">
@@ -74,7 +76,6 @@
 {% if group.role %}
 
 	<div class="page__block page__block--role" id="role">
-
 		<h2>More about my role @ {{ group.groupName }}</h2>
 
 		{{ group.role | safe }}

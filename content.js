@@ -149,15 +149,13 @@ module.exports = {
 					name: "Analytics"
 				}
 			],
-			moreProjects: [
-				"Responsive Site",
-				"Store Pages",
-				"Shops"
-			],
+			moreProjects: {
+				hide: true
+			},
 			projects: [
 				{
 					id: 'product-page',
-					title: "Product Page",
+					title: "UO Product Page",
 					subtitle: "Urban Outfitters Case Study",
 					details: [
 						{
@@ -192,7 +190,7 @@ module.exports = {
 				},
 				{
 					id: 'navigation',
-					title: "Taxonomy & Navigation",
+					title: "UO Taxonomy & Navigation",
 					subtitle: "Urban Outfitters Case Study",
 					details: [
 						{
@@ -232,11 +230,13 @@ module.exports = {
 			id: 'gdi',
 			groupName: "Girl Develop It",
 			desc: "Freelance Illustration & Graphic Design",
-			role: fs.readFileSync('./content/roles/gdi.html'),
+			moreProjects: {
+				hide: true
+			},
 			projects: [
 				{
 					id: 'infographic',
-					title: "Five Year Infographic",
+					title: "GDI Infographic",
 					subtitle: "Freelance for Girl Develop It",
 					details: [
 						{
@@ -262,7 +262,7 @@ module.exports = {
 				},
 				{
 					id: 'business-cards',
-					title: "Team Business Cards",
+					title: "GDI Business Cards",
 					subtitle: "Freelance for Girl Develop It",
 					details: [
 						{
@@ -287,7 +287,7 @@ module.exports = {
 				},
 				{
 					id: 'summit-logo',
-					title: "2016 Summit Logo",
+					title: "GDI 2016 Summit Logo",
 					subtitle: "Freelance for Girl Develop It",
 					details: [
 						{

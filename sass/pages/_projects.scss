@@ -120,7 +120,7 @@ $navigation-arrow-width: 27px + $spacing;
 	margin: $half-spacing;
 	padding: $quarter-spacing;
 	border-radius: 200px;
-	border: 4px solid $lightest-gray;
+	border: 4px solid $light-blue;
 	text-align: center;
 	position: relative;
 
@@ -145,5 +145,5 @@ $navigation-arrow-width: 27px + $spacing;
 }
 
 .org-chart__dept--me {
-	border-color: $light-pink;
+	border-color: lighten($orange, 10%);
 }
