@@ -1,12 +1,12 @@
 var _ = require('lodash');
 
-module.exports = getAdjacentProjectUrls;
+module.exports = getAdjacentProjects;
 
 function makeUrl(group, project) {
     return '/projects/' + group + '/' + project;
 }
 
-function getAdjacentProjectUrls(groupId, projectId, content) {
+function getAdjacentProjects(groupId, projectId, content) {
     var groupIndex = _.findIndex(content.projectGroups, ['id', groupId]),
         projectIndex = _.findIndex(content.projectGroups[groupIndex].projects, ['id', projectId]);
 
@@ -15,12 +15,18 @@ function getAdjacentProjectUrls(groupId, projectId, content) {
             previousProjectIndex = projectIndex - 1;
 
         if (previousProjectIndex >= 0) {
-            return makeUrl(groupId, content.projectGroups[groupIndex].projects[previousProjectIndex].id);
+            return {
+                url: makeUrl(groupId, content.projectGroups[groupIndex].projects[previousProjectIndex].id),
+                title: content.projectGroups[groupIndex].projects[previousProjectIndex].title
+            };
 
         } else {
             var previousGroup = content.projectGroups[previousGroupIndex] ||
                                 _.last(content.projectGroups);
-            return makeUrl(previousGroup.id, _.last(previousGroup.projects).id);
+            return {
+                url: makeUrl(previousGroup.id, _.last(previousGroup.projects).id),
+                title: _.last(previousGroup.projects).title
+            };
         }
     }
 
@@ -29,13 +35,19 @@ function getAdjacentProjectUrls(groupId, projectId, content) {
             nextProjectIndex = projectIndex + 1;
 
         if (nextProjectIndex < content.projectGroups[groupIndex].projects.length) {
-            return makeUrl(groupId, content.projectGroups[groupIndex].projects[nextProjectIndex].id);
+            return {
+                url: makeUrl(groupId, content.projectGroups[groupIndex].projects[nextProjectIndex].id),
+                title: content.projectGroups[groupIndex].projects[nextProjectIndex].title
+            };
 
         } else {
             var nextGroup = nextGroupIndex < content.projectGroups.length
                     ? content.projectGroups[nextGroupIndex]
                     : content.projectGroups[0];
-            return makeUrl(nextGroup.id, nextGroup.projects[0].id);
+            return {
+                url: makeUrl(nextGroup.id, nextGroup.projects[0].id),
+                title: nextGroup.projects[0].title
+            };
         }
     }
 

@@ -1,19 +1,44 @@
-.home .home__footer {
-	@extend %base-element-padding;
-	margin-top: $spacing*3;
+.home {
 
-	a {
-		margin-right: $half-spacing;
-		padding: $quarter-spacing;
-		&:first-of-type {
-			padding-left: 0;
+	.headline__right {
+		$hand-size: 60px;
+		flex: 0 0 $hand-size;
+
+		@include keyframes(wave) {
+			from { @include transform(rotate(-10deg)); }
+			to { @include transform(rotate(10deg)); }
+		}
+
+		.hand-svg {
+			@include size($hand-size);
+			@include transform-origin(center 75%);
+			@include animation(wave 1s ease-in-out null infinite alternate);
+			@include transform(rotate(0deg));
+			@include transition(margin-top .2s);
+			cursor: grab;
+			cursor: -webkit-grab;
+			&.high-five {
+				margin-top: -10px;
+			}
+
+			.finger-1,
+			.finger-2,
+			.finger-4,
+			.finger-5 {
+				@include transition(transform $transition-speed);
+				@include transform-origin(center 75%);
+			}
+
+			&:hover {
+				.finger-1 { @include transform(rotate(-7deg)); }
+				.finger-2 { @include transform(rotate(-5deg)); }
+				.finger-4 { @include transform(rotate(6deg)); }
+				.finger-5 { @include transform(rotate(8deg)); }
+			}
 		}
 	}
 
-	svg {
-		@include size(1.2em);
-		fill: currentColor;
+	.block__headline + p {
+		margin-top: $spacing*1.5;
 	}
 }
-
-

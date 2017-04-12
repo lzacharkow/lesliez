@@ -8,8 +8,9 @@ const _ = require('lodash');
 const app = express();
 const isDev = app.get('env') === 'development';
 
-const getAdjacentProjectUrls = require('./utils/getAdjacentProjectUrls.js');
+const getAdjacentProjects = require('./utils/getAdjacentProjects.js');
 const getProjectContents = require('./utils/getProjectContents.js');
+const getGroups = require('./utils/getGroups.js');
 const content = require('./content.js');
 
 
@@ -47,10 +48,6 @@ app.get('/', (req, res) => {
     res.render('pages/home');
 });
 
-// app.get('/about', (req, res) => {
-//     res.render('pages/about');
-// });
-
 app.get('/resume', (req, res) => {
     res.render('pages/resume', {
         resume: content.resume
@@ -63,26 +60,25 @@ app.get('/writing', (req, res) => {
     });
 });
 
-app.get('/projects', (req, res) => {
-    res.render('pages/project-index', {
-        projectGroups: content.projectGroups
-    });
-});
-
 app.get('/projects/:groupId/:projectId', (req, res) => {
 	var projectContents = getProjectContents(req.params.groupId, req.params.projectId, content),
-        adjacentProjectUrls = getAdjacentProjectUrls(req.params.groupId, req.params.projectId, content);
+        adjacentProjects = getAdjacentProjects(req.params.groupId, req.params.projectId, content),
+        groups = getGroups(req.params.groupId, content);
 
     res.render('pages/project', {
     	groupId: req.params.groupId,
         group: projectContents.group,
     	projectId: req.params.projectId,
     	project: projectContents.project,
-        nextProjectUrl: adjacentProjectUrls.next,
-        previousProjectUrl: adjacentProjectUrls.previous
+        nextProject: adjacentProjects.next,
+        previousProject: adjacentProjects.previous,
+        groups: groups
     });
 });
 
+app.get('*', (req, res) => {
+    res.render('pages/404');
+});
 
 // START IT UP
 console.log('it started');

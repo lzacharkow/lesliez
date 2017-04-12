@@ -1,12 +1,5 @@
 // ------ Placeholders ------ //
 
-%base-element-padding {
-	padding: 0 $base-element-padding-large;
-	@media #{$small} {
-		padding: 0 $base-element-padding-small;
-	}
-}
-
 %base-font-style {
 	font-family: $base-font-family;
 	font-size: $font-size-medium;
@@ -21,6 +14,7 @@
 	color: $link-color;
 	font-weight: bold;
 	text-decoration: none;
+	font-family: $alt-font-family;
 	&:hover {
 		color: $link-color-hover;
 		cursor: pointer;
@@ -34,8 +28,19 @@
 }
 
 %h2 {
-	@include get-font-size(1.4);
+	@include get-font-size(1.6);
 	font-weight: bold;
+	font-family: $alt-font-family;
+	display: inline-block;
+	&:after {
+		content: "";
+		display: inline-block;
+		@include size(100% 10px);
+		background-image: url('/img/sine-pattern-thick-blue.svg');
+		background-size: 20px;
+		background-repeat: repeat-x;
+		background-position: center;
+	}
 }
 
 %h3 {
@@ -62,36 +67,30 @@
 	font-family: $alt-font-family;
 }
 
-%headline--small {
-	@include get-font-size(1.2);
-	font-family: $alt-font-family;
-}
-
 
 // ------ Elements ------ //
 
 body {
-	background-image: url('/img/sine-pattern-blue.svg');
-	background-size: 40px;
-	background-repeat: repeat;
+	background-color: $bg-color;
 }
 
-html 			{ @extend %base-font-style; }
-h1 				{ @extend %h1; }
-h2 				{ @extend %h2; }
-h3 				{ @extend %h3; }
-h4 				{ @extend %h4; }
-p 				{ @extend %p; }
-a 				{ @extend %a; }
-p.headline 		{ @extend %headline; }
-p.headline--small 		{ @extend %headline--small; }
-p.caption  		{ @extend %tiny-text; }
+html 					{ @extend %base-font-style; }
+h1 						{ @extend %h1; }
+h2 						{ @extend %h2; }
+h3 						{ @extend %h3; }
+h4 						{ @extend %h4; }
+p 						{ @extend %p; }
+a 						{ @extend %a; }
+p.headline 				{ @extend %headline; }
+p.caption  				{ @extend %tiny-text; }
 
-.caption {
-	text-align: center;
-	+ p {
-		margin-top: $spacing*2;
-	}
+.caption + p {
+	margin-top: $spacing*2;
+}
+
+p a,
+ul a {
+	font-size: 1.1em;
 }
 
 b {
@@ -103,7 +102,6 @@ i {
 }
 
 ol, ul {
-	@extend %base-element-padding;
 	@include get-font-size(1);
 	margin-left: $spacing*2;
 
@@ -151,28 +149,16 @@ p {
 	}
 }
 
-h1, h2, h3, h4, p {
-	@extend %base-element-padding;
-}
-
 hr {
 	border: none;
 	height: 1px;
-	margin: $spacing*2 $base-element-padding-large;
+	margin: $spacing*2 0;
 	@media #{$small} {
-		margin: $spacing*1.5 $base-element-padding-small;
-	}
-	&.hr--fill {
-		height: 10px;
-		background-image: url('/img/sine-pattern-thick-blue.svg');
-		background-size: 20px;
-		background-repeat: repeat-x;
-		background-position: center;
+		margin: $spacing*1.5 0;
 	}
 }
 
 .img-wrapper {
-	@extend %base-element-padding;
 	margin-top: $spacing*2;
 
 	+ .caption {
@@ -181,53 +167,5 @@ hr {
 
 	+ p {
 		margin-top: $spacing*2;
-	}
-}
-
-.group-section {
-	@extend %base-element-padding;
-	@include outer-container;
-	line-height: 1.4;
-	margin-top: $spacing*4;
-
-	+ .group-section {
-		margin-top: $spacing*2;
-		padding-top: $spacing*2;
-	}
-}
-
-.group__labels {
-	@include span-columns(6);
-	@media #{$small} {
-		width: 100%;
-	}
-
-	.label__title {
-		@extend %h3;
-	}
-
-	.label__description {
-		margin-top: $quarter-spacing;
-		@media #{$small} {
-			margin-top: 0;
-		}
-	}
-}
-
-.group__items {
-	@include span-columns(6);
-	padding: 0;
-	margin: 0;
-	list-style: none;
-
-	.items__item {
-		padding: 0;
-
-		+ .items__item {
-			margin-top: $spacing;
-			@media #{$small} {
-				margin-top: $half-spacing;
-			}
-		}
 	}
 }

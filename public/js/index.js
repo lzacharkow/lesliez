@@ -5,4 +5,11 @@ $(document).ready(function() {
 		effect: "fadeIn"
 	});
 
+	$('.hand-svg').click(function(){
+		$(this).addClass('high-five');
+		setTimeout(function(){
+			$('.hand-svg').removeClass('high-five');
+		}, 100);
+	});
+
 });

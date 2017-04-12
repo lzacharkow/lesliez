@@ -8,7 +8,6 @@ $mobile-img-width: $desktop-img-width/4;
 $mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
 
 .img-wrapper {
-	text-align: center;
 
 	img {
 		width: 100%;
@@ -104,5 +103,3 @@ $mobile-img-right-pos: $tablet-img-width - $mobile-img-width/2;
 	@include size($tablet-img-width 100%);
 	@include position(absolute, $tablet-img-top-pos 0% null null);
 }
-
-

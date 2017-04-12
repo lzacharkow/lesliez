@@ -1,29 +1,19 @@
-// $logo-size: 100px;
-@media #{$small} {
-	$logo-size: 40px;
-}
-
 .page-wrapper {
 	@include clearfix;
-	margin-bottom: $spacing*4;
-	@media #{$small} {
-		margin-bottom: $spacing*2;
-	}
+	margin: 0 auto;
 }
 
 .page__navigation {
-	max-width: 600px;
-	@extend %base-element-padding;
 	display: flex;
-    justify-content: space-between;
-    font-family: $alt-font-family;
-    margin: $spacing*2 auto $spacing*3 auto;
+    justify-content: center;
+    margin: $spacing*2 auto 0 auto;
     @media #{$small} {
-    	margin: $spacing auto $spacing*2 auto;
+    	margin: $spacing auto 0 auto;
     }
+
     a {
-    	display: inline-block;
 		padding: $half-spacing 0;
+		margin: 0 $spacing;
 		&:after {
 			content: " ";
 			display: block;
@@ -44,29 +34,58 @@
 }
 
 .page__block {
-	max-width: $page-max-width-small;
 	margin: 0 auto;
+	padding: $spacing*4 $spacing;
 	position: relative;
 
-	+ .page__block {
-		&:before {
-			content: "";
-			display: block;
-			height: 10px;
-			margin: $spacing*4 $base-element-padding-large;
-			background-image: url('/img/sine-pattern-thick-blue.svg');
-			background-size: 20px;
-			background-repeat: repeat-x;
-			background-position: center;
-			@media #{$small} {
-				margin: $spacing*3 $base-element-padding-small;
-			}
-		}
+	.block__content {
+		max-width: $page-max-width;
+		margin: 0 auto;
+	}
+
+	@media #{$small} {
+		padding: $spacing*3 $spacing;
 	}
 }
 
-.block__footer {
-	@extend %base-element-padding;
-	position: relative;
-	text-align: center;
+.page__block--headline {
+	padding-top: $spacing*3;
+	@media #{$small} {
+		padding-top: $spacing*2;
+	}
+}
+
+.page__block:nth-of-type(odd) {
+	background-color: $bg-alt-color;
+}
+
+.block__headline {
+	display: flex;
+	align-items: center;
+}
+
+.headline__left {
+	flex: 1 1 auto;
+}
+
+.headline__right {
+	flex: 0 0 60px;
+	margin-left: $spacing*3;
+	@media #{$small} {
+		margin-left: $spacing;
+	}
+}
+
+.headline__footer {
+	display: flex;
+	justify-content: left;
+	margin-top: $spacing;
+	a {
+		padding: $half-spacing 0;
+		margin-right: $spacing;
+	}
+	svg {
+		@include size(1.25em);
+		fill: currentColor;
+	}
 }

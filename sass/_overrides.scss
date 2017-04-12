@@ -1,12 +1,3 @@
-@import "pages/projects",
-		"pages/home",
-		"pages/project-index",
-		"pages/resume",
-		"pages/about";
-
-.about,
-.projects {
-	.page__block {
-		max-width: $page-max-width-large;
-	}
-}
+@import "pages/home",
+		"pages/projects",
+		"pages/resume";

@@ -43,17 +43,58 @@ module.exports = {
 					dates: "Study abroad Spring 2011 semester"
 				}
 			]
+		}, {
+			groupName: "Skills",
+			skills: true,
+			items: [
+				{
+					label: "Design",
+					skills: [
+						"User experience design",
+						"Product design",
+						"Illustration",
+						"Adobe Creative Suite",
+						"Sketch"
+					],
+					extras: [
+						"Visual design",
+						"Design workshops"
+					]
+				}, {
+					label: "Development",
+					skills: [
+						"HTML/CSS, SCSS & LESS", "SVG", "Javascript, AngularJS, NodeJS", "Nunjucks", "Grunt", "Git"
+					],
+					extras: [
+						"React",
+						"Gulp"
+					]
+				}, {
+					label: "UX Research",
+					skills: [
+						"Quantitative surveys", "Survey Gizmo", "Optimal Workshop"
+					],
+					extras: [
+						"Qualitative interview moderation"
+					]
+				}, {
+					label: "Product Management",
+					skills: [
+						"Agile Development", "Cross-team collaboration", "Goal setting & KPI definition", "Feature scoping", "Atlassian Jira & Confluence"
+					]
+				}
+			]
 		}
 	],
 	projectGroups: [
 		{
-			id: 'side-projects',
-			groupName: "Side Projects",
+			id: 'passion-projects',
+			groupName: "Passion Projects",
 			projects: [
 				{
 					id: 'tabby-cat',
 					title: "Tabby Cat",
-					subtitle: "A Chrome Extension",
+					subtitle: ", Chrome extension",
 					details: [
 					 	{
 							title: "Project scope",
@@ -75,7 +116,7 @@ module.exports = {
 							]
 						}
 					],
-					content: fs.readFileSync('./content/projects/side-projects/tabby-cat.html')
+					content: fs.readFileSync('./content/projects/passion-projects/tabby-cat.html')
 				}
 			]
 		},
@@ -103,7 +144,7 @@ module.exports = {
 				{
 					id: 'energy-widgets',
 					title: "Opower Energy Widgets",
-					subtitle: "Opower Case Study",
+					subtitle: ", Opower case study",
 					details: [
 						{
 							title: "My Contributions",
@@ -155,8 +196,8 @@ module.exports = {
 			projects: [
 				{
 					id: 'product-page',
-					title: "UO Product Page",
-					subtitle: "Urban Outfitters Case Study",
+					title: "Product Page Redesign",
+					subtitle: ", UO case study",
 					details: [
 						{
 							title: "My Contributions",
@@ -190,8 +231,8 @@ module.exports = {
 				},
 				{
 					id: 'navigation',
-					title: "UO Taxonomy & Navigation",
-					subtitle: "Urban Outfitters Case Study",
+					title: "Taxonomy & Navigation Redesign",
+					subtitle: ", UO case study",
 					details: [
 						{
 							title: "My Contributions",
@@ -227,8 +268,8 @@ module.exports = {
 			]
 		},
 		{
-			id: 'gdi',
-			groupName: "Girl Develop It",
+			id: 'illustration',
+			groupName: "Illustration",
 			desc: "Freelance Illustration & Graphic Design",
 			moreProjects: {
 				hide: true
@@ -236,8 +277,8 @@ module.exports = {
 			projects: [
 				{
 					id: 'infographic',
-					title: "GDI Infographic",
-					subtitle: "Freelance for Girl Develop It",
+					title: "Infographic",
+					subtitle: ", Girl Develop It",
 					details: [
 						{
 							title: "Company",
@@ -258,12 +299,12 @@ module.exports = {
 							]
 						}
 					],
-					content: fs.readFileSync('./content/projects/gdi/infographic.html')
+					content: fs.readFileSync('./content/projects/illustration/infographic.html')
 				},
 				{
 					id: 'business-cards',
-					title: "GDI Business Cards",
-					subtitle: "Freelance for Girl Develop It",
+					title: "Team Cards",
+					subtitle: ", Girl Develop It",
 					details: [
 						{
 							title: "Company",
@@ -283,12 +324,12 @@ module.exports = {
 							]
 						}
 					],
-					content: fs.readFileSync('./content/projects/gdi/business-cards.html')
+					content: fs.readFileSync('./content/projects/illustration/business-cards.html')
 				},
 				{
 					id: 'summit-logo',
-					title: "GDI 2016 Summit Logo",
-					subtitle: "Freelance for Girl Develop It",
+					title: "Summit Logo",
+					subtitle: ", Girl Develop It",
 					details: [
 						{
 							title: "Company",
@@ -308,44 +349,17 @@ module.exports = {
 							]
 						}
 					],
-					content: fs.readFileSync('./content/projects/gdi/summit-logo.html')
+					content: fs.readFileSync('./content/projects/illustration/summit-logo.html')
 				}
 			]
-		},
-		{
-			id: 'various-work',
-			groupName: 'Various work',
+		}, {
+			id: 'installations',
+			groupName: 'Installations',
 			projects: [
-				{
-					id: 'cyclista',
-					title: "Cyclista",
-					subtitle: "Industrial Design Senior Thesis",
-					details: [
-						{
-							title: "About this project",
-							items: [
-								"Industrial Design senior thesis project"
-							]
-						}, {
-							title: "Scope of work",
-							items: [
-								"Product design",
-								"Fabrication",
-								"Graphic design"
-							]
-						}, {
-							title: "Date",
-							items: [
-								"Spring 2012"
-							]
-						}
-					],
-					content: fs.readFileSync('./content/projects/various/cyclista.html')
-				},
 				{
 					id: 'flora-catalogus',
 					title: "Flora Catalogus",
-					subtitle: "Digital Art Installation",
+					subtitle: ", art installation",
 					details: [
 						{
 							title: "About this project",
@@ -370,12 +384,12 @@ module.exports = {
 							]
 						}
 					],
-					content: fs.readFileSync('./content/projects/various/flora-catalogus.html')
+					content: fs.readFileSync('./content/projects/installations/flora-catalogus.html')
 				},
 				{
 					id: 'trestleator',
 					title: "The Trestleator",
-					subtitle: "Digital Art Installation",
+					subtitle: ", commercial installation",
 					details: [
 						{
 							title: "About this project",
@@ -400,7 +414,38 @@ module.exports = {
 							]
 						}
 					],
-					content: fs.readFileSync('./content/projects/various/trestleator.html')
+					content: fs.readFileSync('./content/projects/installations/trestleator.html')
+				}
+			]
+		}, {
+			id: 'soft-goods',
+			groupName: 'Soft Goods',
+			projects: [
+				{
+					id: 'cyclista',
+					title: "Cyclista",
+					subtitle: ", fashion-forward commuter gear",
+					details: [
+						{
+							title: "About this project",
+							items: [
+								"Industrial Design senior thesis project"
+							]
+						}, {
+							title: "Scope of work",
+							items: [
+								"Product design",
+								"Fabrication",
+								"Graphic design"
+							]
+						}, {
+							title: "Date",
+							items: [
+								"Spring 2012"
+							]
+						}
+					],
+					content: fs.readFileSync('./content/projects/soft-goods/cyclista.html')
 				}
 			]
 		}
