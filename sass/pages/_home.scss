@@ -9,7 +9,7 @@
 
 .headline__right {
 	$hand-size: 70px;
-	$hand-size-small: 50px;
+	$hand-size-small: 60px;
 
 	flex: 0 0 $hand-size;
 	margin-top: $spacing*2;
@@ -53,7 +53,6 @@
 
 	@media #{$small} {
 		flex: 0 0 $hand-size-small;
-		margin-top: $half-spacing;
 		.hand-svg {
 			@include size($hand-size-small);
 		}

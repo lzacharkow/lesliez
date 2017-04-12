@@ -59,7 +59,7 @@ html {
   color: #5B616E; }
   @media only screen and (max-width: 640px) {
     html {
-      font-size: 14px; } }
+      font-size: 16px; } }
   @media only screen and (min-width: 1441px) {
     html {
       font-size: 20px; } }
@@ -436,11 +436,10 @@ hr {
       transform: rotate(8deg); }
   @media only screen and (max-width: 640px) {
     .headline__right {
-      flex: 0 0 50px;
-      margin-top: 10px; }
+      flex: 0 0 60px; }
       .headline__right .hand-svg {
-        height: 50px;
-        width: 50px; } }
+        height: 60px;
+        width: 60px; } }
 
 .projects .block__headline {
   align-items: flex-end; }
