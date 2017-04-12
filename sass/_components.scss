@@ -8,6 +8,7 @@
     justify-content: center;
     margin: $spacing*2 auto 0 auto;
     @media #{$small} {
+    	justify-content: left;
     	margin: $spacing auto 0 auto;
     }
 
@@ -57,23 +58,6 @@
 
 .page__block:nth-of-type(odd) {
 	background-color: $bg-alt-color;
-}
-
-.block__headline {
-	display: flex;
-	align-items: center;
-}
-
-.headline__left {
-	flex: 1 1 auto;
-}
-
-.headline__right {
-	flex: 0 0 60px;
-	margin-left: $spacing*3;
-	@media #{$small} {
-		margin-left: $spacing;
-	}
 }
 
 .headline__footer {

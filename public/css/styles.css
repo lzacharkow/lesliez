@@ -59,7 +59,7 @@ html {
   color: #5B616E; }
   @media only screen and (max-width: 640px) {
     html {
-      font-size: 16px; } }
+      font-size: 14px; } }
   @media only screen and (min-width: 1441px) {
     html {
       font-size: 20px; } }
@@ -284,6 +284,7 @@ hr {
   margin: 40px auto 0 auto; }
   @media only screen and (max-width: 640px) {
     .page__navigation {
+      justify-content: left;
       margin: 20px auto 0 auto; } }
   .page__navigation a {
     padding: 10px 0;
@@ -322,20 +323,6 @@ hr {
 .page__block:nth-of-type(odd) {
   background-color: #f5fbff; }
 
-.block__headline {
-  display: flex;
-  align-items: center; }
-
-.headline__left {
-  flex: 1 1 auto; }
-
-.headline__right {
-  flex: 0 0 60px;
-  margin-left: 60px; }
-  @media only screen and (max-width: 640px) {
-    .headline__right {
-      margin-left: 20px; } }
-
 .headline__footer {
   display: flex;
   justify-content: left;
@@ -348,8 +335,20 @@ hr {
     width: 1.25em;
     fill: currentColor; }
 
-.home .headline__right {
-  flex: 0 0 60px; }
+.block__headline {
+  display: flex;
+  align-items: flex-start; }
+
+.headline__left {
+  flex: 1 1 auto; }
+
+.headline__right {
+  flex: 0 0 70px;
+  margin-top: 40px;
+  margin-left: 60px; }
+  @media only screen and (max-width: 640px) {
+    .headline__right {
+      margin-left: 20px; } }
 
 @-webkit-keyframes wave {
   from {
@@ -376,9 +375,9 @@ hr {
     -ms-transform: rotate(10deg);
     -o-transform: rotate(10deg);
     transform: rotate(10deg); } }
-  .home .headline__right .hand-svg {
-    height: 60px;
-    width: 60px;
+  .headline__right .hand-svg {
+    height: 70px;
+    width: 70px;
     -webkit-transform-origin: center 75%;
     -moz-transform-origin: center 75%;
     -ms-transform-origin: center 75%;
@@ -397,12 +396,12 @@ hr {
     transition: margin-top 0.2s;
     cursor: grab;
     cursor: -webkit-grab; }
-    .home .headline__right .hand-svg.high-five {
+    .headline__right .hand-svg.high-five {
       margin-top: -10px; }
-    .home .headline__right .hand-svg .finger-1,
-    .home .headline__right .hand-svg .finger-2,
-    .home .headline__right .hand-svg .finger-4,
-    .home .headline__right .hand-svg .finger-5 {
+    .headline__right .hand-svg .finger-1,
+    .headline__right .hand-svg .finger-2,
+    .headline__right .hand-svg .finger-4,
+    .headline__right .hand-svg .finger-5 {
       -webkit-transition: -webkit-transform 0.4s;
       -moz-transition: -moz-transform 0.4s;
       transition: transform 0.4s;
@@ -411,33 +410,37 @@ hr {
       -ms-transform-origin: center 75%;
       -o-transform-origin: center 75%;
       transform-origin: center 75%; }
-    .home .headline__right .hand-svg:hover .finger-1 {
+    .headline__right .hand-svg:hover .finger-1 {
       -webkit-transform: rotate(-7deg);
       -moz-transform: rotate(-7deg);
       -ms-transform: rotate(-7deg);
       -o-transform: rotate(-7deg);
       transform: rotate(-7deg); }
-    .home .headline__right .hand-svg:hover .finger-2 {
+    .headline__right .hand-svg:hover .finger-2 {
       -webkit-transform: rotate(-5deg);
       -moz-transform: rotate(-5deg);
       -ms-transform: rotate(-5deg);
       -o-transform: rotate(-5deg);
       transform: rotate(-5deg); }
-    .home .headline__right .hand-svg:hover .finger-4 {
+    .headline__right .hand-svg:hover .finger-4 {
       -webkit-transform: rotate(6deg);
       -moz-transform: rotate(6deg);
       -ms-transform: rotate(6deg);
       -o-transform: rotate(6deg);
       transform: rotate(6deg); }
-    .home .headline__right .hand-svg:hover .finger-5 {
+    .headline__right .hand-svg:hover .finger-5 {
       -webkit-transform: rotate(8deg);
       -moz-transform: rotate(8deg);
       -ms-transform: rotate(8deg);
       -o-transform: rotate(8deg);
       transform: rotate(8deg); }
-
-.home .block__headline + p {
-  margin-top: 30px; }
+  @media only screen and (max-width: 640px) {
+    .headline__right {
+      flex: 0 0 50px;
+      margin-top: 10px; }
+      .headline__right .hand-svg {
+        height: 50px;
+        width: 50px; } }
 
 .projects .block__headline {
   align-items: flex-end; }
