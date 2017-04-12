@@ -1,58 +1,120 @@
-{% set page = "home" %}
+{% set title = "Home" %}
 {% set pagetitle = "Leslie Zacharkow, designer & developer" %}
+{% set page = "home" %}
+{% set useJs = true %}
 {% extends "../layout.html" %}
 
 {% block mainContent %}
 
-	<p class="headline">Hi there, I’m Leslie Zacharkow. I use design & code to build things that make you smile or make you think.</p>
+	<div class="page__block page__block--headline">
+		<div class="block__content">
+			<div class="block__headline">
+				<div class="headline__left">
+					<h1>Hi there, my name is Leslie.<br>I'm a creative generalist working in tech.</h1>
+				</div>
+				<div class="headline__right">
+					<svg class="hand-svg" xmlns="http://www.w3.org/2000/svg" width="48.35482" height="60" viewBox="0 0 48.35482 60">
+    					<path d="M9.69939,37.13717h3.11084l-.12088-1.99846-.2985-4.32556A2.61573,2.61573,0,0,1,14.815,28.01972c2.77363-.19389,7.38727-.43316,11.961-.29987A61.05167,61.05167,0,0,1,35.667,29.118a26.05074,26.05074,0,0,1,7.29491,3.429,4.57768,4.57768,0,0,1,1.99319,4.6486L43.916,43.0023c-1.33048,6.8378-4.18045,11.92956-8.31937,14.42134a18.43864,18.43864,0,0,1-9.669,2.3918h-.00005c-9.44867,0-14.18465-6.67341-17.69006-15.0417Z" fill="#8cc2dd"/>
+					    <g class="finger-1"><path d="M.90653,24.49478c5.784-3.57533,9.75978,12.346,9.75978,12.346,21.44895.29636,24.92709,20.57957,24.92709,20.57957C31.93723,59.94552,11.66906,64.681,6.11727,47.6809L.0271,26.48036A2.07354,2.07354,0,0,1,.90653,24.49478Z" fill="#8cc2dd"/></g>
+					    <g class="finger-2"><rect x="11.71684" y="3.57406" width="6.69274" height="34.71384" rx="3.34637" ry="3.34637" transform="translate(31.5317 40.77525) rotate(176.05228)" fill="#8cc2dd"/></g>
+					    <g class="finger-3"><path d="M24.90833,0h0a3.34637,3.34637,0,0,1,3.34637,3.34637V33.04065A3.34637,3.34637,0,0,1,24.90833,36.387h0A3.34637,3.34637,0,0,1,21.562,33.04065V3.34637A3.34637,3.34637,0,0,1,24.90833,0Z" fill="#8cc2dd"/></g>
+					    <g class="finger-4"><rect x="31.33244" y="3.57406" width="6.69274" height="34.71384" rx="3.34637" ry="3.34637" transform="translate(1.5233 -2.33783) rotate(3.94771)" fill="#8cc2dd"/></g>
+					    <g class="finger-5"><path d="M45.67152,15.71789h0a3.07352,3.07352,0,0,0-3.56566,2.48577L38.07727,40.71645A3.07352,3.07352,0,0,0,40.563,44.28211h0a3.07352,3.07352,0,0,0,3.56567-2.48577L48.1573,19.28355A3.07352,3.07352,0,0,0,45.67152,15.71789Z" fill="#8cc2dd"/></g>
+					</svg>
+				</div>
+			</div>
+			<p>If you asked me to draw my career path, it would be a wavy line that dips into development and illustration, but always comes back to design.</p>
 
-	<p>Most recently, I was a Senior UX Designer/Developer at <a href="https://opower.com/" target="_blank">Opower</a>, where I built products that nudged people to save energy. Before that, I worked on the online shopping experience at <a href="http://www.urbanoutfitters.com/urban/index.jsp" target="_blank">Urban Outfitters</a> as a Product Manager/Interaction Designer.</p>
+			<p>I'm currently consulting as a UX designer/developer specializing in design systems. Interested? <a href="mailto:lesliezacharkow@gmail.com">Let's talk business</a>!</p>
 
-	<p>My free time is spent working on my Chrome extension, <a href="https://chrome.google.com/webstore/detail/tabby-cat/mefhakmgclhhfbdadeojlkbllmecialg?hl=en" target="_blank">Tabby Cat</a>. Dogs are coming soon <a href="https://twitter.com/lslez/status/821743879779061763" target="_blank">🐶</a>.</p>
+			<p>I also enjoy making animated illustrations with SVG. <a href="mailto:lesliezacharkow@gmail.com">Let me draw for you</a>!</p>
 
-	<p>When I have the chance to close my laptop, I like to play the piano, go outside, rock climb, or <a href="https://www.instagram.com/lil_beep/?hl=en" target="_blank">try to make my cat famous</a>. I love meeting new people, so don't hesitate to say hi!</p>
+			<div class="headline__footer">
+				<a href="mailto:lesliezacharkow@gmail.com">
+					<svg version="1.1" title="Email" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+						<path d="M71.2,61.7L48.5,42.4l-4,3.4c-1.3,1.1-2.9,1.7-4.5,1.7c-1.6,0-3.2-0.6-4.5-1.7l-4-3.4L8.8,61.7H71.2z"/>
+						<polygon points="74,20.8 51.4,40 74,59.1 	"/>
+						<path d="M8.9,18.3L38,43c1.2,1,2.9,1,4,0l29-24.7H8.9z"/>
+						<polygon points="6,61.6 6,61.7 6.1,61.7 	"/>
+						<polygon points="73.9,61.7 74,61.7 74,61.6 	"/>
+						<polygon points="28.6,40 6,20.8 6,59.1 	"/>
+						<polygon points="6,18.3 6,18.3 6,18.3 	"/>
+					</svg>
+				</a>
+				<a href="https://twitter.com/lslez" target="_blank">
+					<svg version="1.1" title="Twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+						<path d="M77.9,17.1c-2.7,1.2-5.6,2-8.7,2.4c3.1-1.9,5.5-4.8,6.7-8.4c-2.9,1.7-6.2,3-9.6,3.7c-2.8-2.9-6.7-4.8-11.1-4.8
+							c-8.4,0-15.1,6.8-15.1,15.1c0,1.2,0.1,2.3,0.4,3.5C27.9,28,16.7,21.9,9.2,12.8c-1.3,2.2-2.1,4.8-2.1,7.6c0,5.3,2.7,9.9,6.7,12.6
+							c-2.5-0.1-4.8-0.8-6.9-1.9c0,0.1,0,0.1,0,0.2c0,7.3,5.2,13.5,12.2,14.9c-1.3,0.3-2.6,0.5-4,0.5c-1,0-1.9-0.1-2.9-0.3
+							c1.9,6,7.5,10.4,14.2,10.5c-5.2,4.1-11.7,6.5-18.8,6.5c-1.2,0-2.4-0.1-3.6-0.2c6.7,4.3,14.7,6.8,23.2,6.8
+							c27.9,0,43.1-23.1,43.1-43.1c0-0.7,0-1.3,0-2C73.3,22.8,75.9,20.1,77.9,17.1z"/>
+					</svg>
+				</a>
+				<a href="https://www.linkedin.com/in/lesliezacharkow" target="_blank">
+					<svg version="1.1" title="LinkedIn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+						<path d="M62.4,7H17.6C11.3,7,6.2,12.1,6.2,18.4v43.2c0,6.3,5.1,11.4,11.4,11.4h44.8c6.3,0,11.4-5.1,11.4-11.4V18.4
+							C73.8,12.1,68.7,7,62.4,7z M28.8,60.5h-8.3V34h8.3V60.5z M24.7,30.3c-2.7,0-4.8-2.1-4.8-4.8c0-2.6,2.1-4.8,4.8-4.8
+							c2.6,0,4.8,2.1,4.8,4.8C29.5,28.2,27.4,30.3,24.7,30.3z M59.8,60.5h-8.3V47.6c0-3.1-0.1-7-4.3-7c-4.3,0-5,3.4-5,6.8v13.1H34V34h7.9
+							v3.6h0.1c1.1-2.1,3.8-4.3,7.8-4.3c8.4,0,9.9,5.5,9.9,12.7V60.5z"/>
+					</svg>
+				</a>
+				<a href="https://github.com/lzacharkow" target="_blank">
+					<svg version="1.1" title="Github" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+						<path d="M28.7,74.9c1.8,0.3,2.4-0.8,2.4-1.7c0-0.9,0-3.7,0-6.7c-10,2.2-12.1-4.2-12.1-4.2c-1.6-4.1-4-5.2-4-5.2
+							c-3.3-2.2,0.2-2.2,0.2-2.2c3.6,0.3,5.5,3.7,5.5,3.7c3.2,5.5,8.4,3.9,10.4,3c0.3-2.3,1.3-3.9,2.3-4.8c-8-0.9-16.3-4-16.3-17.7
+							c0-3.9,1.4-7.1,3.7-9.6c-0.4-0.9-1.6-4.5,0.3-9.5c0,0,3-1,9.9,3.7c2.9-0.8,5.9-1.2,9-1.2c3,0,6.1,0.4,9,1.2
+							c6.8-4.6,9.8-3.7,9.8-3.7c2,4.9,0.7,8.6,0.4,9.5c2.3,2.5,3.7,5.7,3.7,9.6c0,13.8-8.4,16.8-16.4,17.7c1.3,1.1,2.4,3.3,2.4,6.6
+							c0,4.8,0,8.7,0,9.8c0,1,0.6,2.1,2.5,1.7c14.2-4.7,24.5-18.2,24.5-34C75.8,21.1,59.8,5,40,5C20.2,5,4.2,21.1,4.2,40.9
+							C4.2,56.7,14.4,70.2,28.7,74.9z"/>
 
-	<div class="home__footer">
-		<a href="mailto:lesliezacharkow@gmail.com">
-			<svg version="1.1" title="Email" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
-				<path d="M71.2,61.7L48.5,42.4l-4,3.4c-1.3,1.1-2.9,1.7-4.5,1.7c-1.6,0-3.2-0.6-4.5-1.7l-4-3.4L8.8,61.7H71.2z"/>
-				<polygon points="74,20.8 51.4,40 74,59.1 	"/>
-				<path d="M8.9,18.3L38,43c1.2,1,2.9,1,4,0l29-24.7H8.9z"/>
-				<polygon points="6,61.6 6,61.7 6.1,61.7 	"/>
-				<polygon points="73.9,61.7 74,61.7 74,61.6 	"/>
-				<polygon points="28.6,40 6,20.8 6,59.1 	"/>
-				<polygon points="6,18.3 6,18.3 6,18.3 	"/>
-			</svg>
-		</a>
-		<a href="https://twitter.com/lslez" target="_blank">
-			<svg version="1.1" title="Twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
-				<path d="M77.9,17.1c-2.7,1.2-5.6,2-8.7,2.4c3.1-1.9,5.5-4.8,6.7-8.4c-2.9,1.7-6.2,3-9.6,3.7c-2.8-2.9-6.7-4.8-11.1-4.8
-					c-8.4,0-15.1,6.8-15.1,15.1c0,1.2,0.1,2.3,0.4,3.5C27.9,28,16.7,21.9,9.2,12.8c-1.3,2.2-2.1,4.8-2.1,7.6c0,5.3,2.7,9.9,6.7,12.6
-					c-2.5-0.1-4.8-0.8-6.9-1.9c0,0.1,0,0.1,0,0.2c0,7.3,5.2,13.5,12.2,14.9c-1.3,0.3-2.6,0.5-4,0.5c-1,0-1.9-0.1-2.9-0.3
-					c1.9,6,7.5,10.4,14.2,10.5c-5.2,4.1-11.7,6.5-18.8,6.5c-1.2,0-2.4-0.1-3.6-0.2c6.7,4.3,14.7,6.8,23.2,6.8
-					c27.9,0,43.1-23.1,43.1-43.1c0-0.7,0-1.3,0-2C73.3,22.8,75.9,20.1,77.9,17.1z"/>
-			</svg>
-		</a>
-		<a href="https://www.linkedin.com/in/lesliezacharkow" target="_blank">
-			<svg version="1.1" title="LinkedIn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
-				<path d="M62.4,7H17.6C11.3,7,6.2,12.1,6.2,18.4v43.2c0,6.3,5.1,11.4,11.4,11.4h44.8c6.3,0,11.4-5.1,11.4-11.4V18.4
-					C73.8,12.1,68.7,7,62.4,7z M28.8,60.5h-8.3V34h8.3V60.5z M24.7,30.3c-2.7,0-4.8-2.1-4.8-4.8c0-2.6,2.1-4.8,4.8-4.8
-					c2.6,0,4.8,2.1,4.8,4.8C29.5,28.2,27.4,30.3,24.7,30.3z M59.8,60.5h-8.3V47.6c0-3.1-0.1-7-4.3-7c-4.3,0-5,3.4-5,6.8v13.1H34V34h7.9
-					v3.6h0.1c1.1-2.1,3.8-4.3,7.8-4.3c8.4,0,9.9,5.5,9.9,12.7V60.5z"/>
-			</svg>
-		</a>
-		<a href="https://github.com/lzacharkow" target="_blank">
-			<svg version="1.1" title="Github" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-				 viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
-				<path d="M28.7,74.9c1.8,0.3,2.4-0.8,2.4-1.7c0-0.9,0-3.7,0-6.7c-10,2.2-12.1-4.2-12.1-4.2c-1.6-4.1-4-5.2-4-5.2
-					c-3.3-2.2,0.2-2.2,0.2-2.2c3.6,0.3,5.5,3.7,5.5,3.7c3.2,5.5,8.4,3.9,10.4,3c0.3-2.3,1.3-3.9,2.3-4.8c-8-0.9-16.3-4-16.3-17.7
-					c0-3.9,1.4-7.1,3.7-9.6c-0.4-0.9-1.6-4.5,0.3-9.5c0,0,3-1,9.9,3.7c2.9-0.8,5.9-1.2,9-1.2c3,0,6.1,0.4,9,1.2
-					c6.8-4.6,9.8-3.7,9.8-3.7c2,4.9,0.7,8.6,0.4,9.5c2.3,2.5,3.7,5.7,3.7,9.6c0,13.8-8.4,16.8-16.4,17.7c1.3,1.1,2.4,3.3,2.4,6.6
-					c0,4.8,0,8.7,0,9.8c0,1,0.6,2.1,2.5,1.7c14.2-4.7,24.5-18.2,24.5-34C75.8,21.1,59.8,5,40,5C20.2,5,4.2,21.1,4.2,40.9
-					C4.2,56.7,14.4,70.2,28.7,74.9z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
 
-			</svg>
-		</a>
+	<div class="page__block">
+		<div class="block__content">
+
+			<h2>Passion Projects</h2>
+
+			<p>My passion project is my Chrome extension, <a href="/projects/passion-projects/tabby-cat">Tabby Cat</a>. If you only had 5 minutes to get to know me, I'd suggest installing it and reading <a href="https://superyesmore.com/the-productive-chicken-and-the-happy-egg-3b142fe8fe03bb046ce0c4867189798e" target="_blank">this article</a> about my thoughts on productivity and happiness.</p>
+
+			<hr>
+
+			<h2>Work from Opower</h2>
+
+			<p>Most recently, I was a Designer/Developer at Opower where I built experiences that help people save energy. Learn about how I used design systems to make clear, consistent, and configurable products in this <a href="/projects/opower/energy-widgets">case study</a>.</p>
+			<p class="caption"></p>
+
+			<hr>
+
+			<h2>Work from Urban Outfitters</h2>
+
+			<p>In my not so distant past, I oversaw the online shopping experience at Urban Outfitters as a Product Manager/Interaction Designer. My biggest contributions were the redesigned <a href="/projects/uo/product-page">product page</a> and <a href="/projects/uo/navigation">navigation</a>.</p>
+
+			<hr>
+
+			<h2>Illustration</h2>
+
+			<p>Sometimes I freelance graphic design and illustration for Girl Develop It, a non-profit that helps women learn to code. I'm proud to have designed this <a href="/projects/illustration/infographic">infographic</a>, this <a href="/projects/illustration/summit-logo">logo</a>, and these <a href="/projects/illustration/business-cards">cards</a>.</p>
+
+			<hr>
+
+			<h2>Installations</h2>
+
+			<p>I like making installations that use technology to <a href="/projects/installations/trestleator">augment your environment</a> and <a href="/projects/installations/flora-catalogus">make you think</a>.</p>
+
+			<hr>
+
+			<h2>Soft goods</h2>
+
+			<p>My industrial design thesis project combined my love of soft-product design and cycling into a line of female-friendly commuter gear. <a href="/projects/soft-goods/cyclista">Learn more</a>.</p>
+
+			<hr />
+
+			<p class="caption">For more information about any of my work, <a href="mailto:lesliezacharkow@gmail.com">get in touch</a>!</p>
+		</div>
 	</div>
 
 {% endblock %}

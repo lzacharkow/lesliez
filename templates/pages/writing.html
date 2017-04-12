@@ -5,13 +5,17 @@
 
 {% block mainContent %}
 
-	{% for publication in writing %}
-	<div class="group-section">
-		<div class="group__labels">
-			<div class="label__title">
-				{{ publication.name }}
-			</div>
-		</div>
+<div class="page__block page__block--headline">
+	<div class="block__content">
+		<h1>My tiny writing history.</h1>
+		<p>More of this is on the way.</p>
+	</div>
+</div>
+
+<div class="page__block">
+	<div class="block__content">
+		{% for publication in writing %}
+		<h2>{{ publication.name }}</h2>
 		<ul class="group__items">
 			{% for article in publication.articles %}
 			<li class="items__item">
@@ -20,7 +24,9 @@
 			</li>
 			{% endfor %}
 		</ul>
+		<hr>
+		{% endfor %}
 	</div>
-	{% endfor %}
+</div>
 
 {% endblock %}

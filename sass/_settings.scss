@@ -6,8 +6,8 @@
 
 // ------ Type Styles ------ //
 
-$base-font-family:	  'Rubik', sans-serif;
-$alt-font-family:     'Rubik', sans-serif;
+$base-font-family:	  'Libre Baskerville', serif;
+$alt-font-family:     'Rubik', serif;
 
 $font-size-small:     16px;
 $font-size-medium:    18px;
@@ -20,21 +20,20 @@ $line-height-large:   1.3;
 
 // ------ Colors ------ //
 
-$dark-gray:     #5B616E;
-$light-gray:    #E1E0DA;
-$lightest-gray: #e5e4da;
-$pink:          #DAA49A;
-$light-pink:    #FFEBDE;
-$blue:          #C1E0F7;
+$dark-gray:		#5B616E;
+$blue:          #8CC2DD;
+$light-blue:	#eef5ff;
+$lightest-blue:	#FAFDFF;
+$dark-blue:		#70bae0;
+$orange:		#EDAA9A;
 $white:         #FFFFFF;
 
 $font-color:        $dark-gray;
-$link-color:        $pink;
-$link-color-hover:  darken($pink, 8%);
-$bg-color:          $light-pink;
-$divider-color:     $lightest-gray;
-$img-shadow-color:  $lightest-gray;
-$bg-shadow-color:   $pink;
+$link-color:        $blue;
+$link-color-hover:  $orange;
+$bg-color:          $white;
+$bg-alt-color:		darken($lightest-blue, 1%);
+$img-shadow-color:  rgba(0,0,0,.1);
 
 
 // ------ Spacing ------ //
@@ -43,14 +42,10 @@ $spacing: 20px;
 $half-spacing: $spacing/2;
 $quarter-spacing: $spacing/4;
 
-$base-element-padding-large: $spacing*4;
-$base-element-padding-small: $spacing*1.5;
-
 
 // ------ Layout ------- //
 
-$page-max-width-small: 840px;
-$page-max-width-large: 960px;
+$page-max-width: 720px;
 
 
 // ------ Breakpoints ------ //
@@ -62,6 +57,7 @@ $large-lower-bound: 1441px;
 // ------ Media Queries ------ //
 
 $small: 'only screen and (max-width: $small-upper-bound)';
+$medium: 'only screen and (min-width: $small-upper-bound)';
 $large: 'only screen and (min-width: $large-lower-bound)';
 
 

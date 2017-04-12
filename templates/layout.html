@@ -25,45 +25,42 @@ If you're wondering, I built my site with Node, Express, Nunjucks, and Sass. htt
 
 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 -->
 
-	<svg display="none" viewBox="0 0 27 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18.7896214 16" style="enable-background:new 0 0 18.7896214 16;" xml:space="preserve">
 		<symbol id="arrow">
-			<path transform="translate(-330.000000, -325.000000)" d="M344.910451,325 C344.972057,327.168537 345.633883,329.581738 346.985699,331.547855 L330,331.547855 L330,334.453905 L346.99978,334.453905 C345.621562,336.467547 345.09703,338.660726 344.910451,341 C347.577118,337.720792 352.470407,334.585919 356.434323,333 C352.470407,331.343674 347.432783,328.388339 344.910451,325"></path>
+			<rect x="0.0000005" y="6.564764" width="18.9138031" height="2.9097066"/>
+			<path d="M17.2084007,2.4832547l7.8908195,4.0622787c1.2033806,0.6195135,1.2003994,2.3410249-0.0051212,2.9563651
+			l-7.9011154,4.0330057c-1.1543159,0.5892029-2.386344-0.6468582-1.7933712-1.799242l1.9237537-3.7386198l-1.9124517-3.7166553
+			C14.8168612,3.1259041,16.0540333,1.8889745,17.2084007,2.4832547z"/>
+		</symbol>
+	</svg>
+	<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10.5 13" enable-background="new 0 0 10.5 13" xml:space="preserve">
+		<symbol id="down-arrow">
+			<rect x="3.7710567" width="2.9097066" height="8.9138041"/>
+			<path d="M10.3030758,7.4886646l-3.907032,5.0318108c-0.5816603,0.7491121-1.7134581,0.7491121-2.2951183,0
+				L0.1938937,7.4886646c-0.682638-1.1494818,0.5651711-2.4753852,1.7539269-1.8636966l3.3006639,1.6983976l3.3006639-1.6983976
+				C9.7379045,5.0132794,10.985714,6.3391829,10.3030758,7.4886646z"/>
 		</symbol>
 	</svg>
 
-	<div class="page-wrapper">
-		<div class="page {{ page }}">
-			<div class="page__navigation">
-				<a href="/" class="
-					{% if page == 'home' %}a--current-page
-					{% endif %}">About</a>
-				<a href="/projects" class="
-					{% if page == 'projects' %}a--current-page
-					{% elif page == 'project-index' %}a--current-page
-					{% endif %}">Projects</a>
-				<a href="/resume" class="
-					{% if page == 'resume' %}a--current-page
-					{% endif %}">Resume</a>
-				<a href="/writing" class="
-					{% if page == 'writing' %}a--current-page
-					{% endif %}">Writing</a>
-			</div>
-
-			<div class="page__block page__block--main">
-				<div class="block__content">
-					{% block mainContent %}{% endblock %}
-				</div>
-			</div>
-
-			{% block extraContent %}{% endblock %}
-
+	<div class="page-wrapper {{ page }}">
+		<div class="page__navigation">
+			<a href="/" class="
+				{% if page == 'projects' %}a--current-page
+				{% elif page == 'home' %}a--current-page
+				{% endif %}">Projects</a>
+			<a href="/resume" class="
+				{% if page == 'resume' %}a--current-page
+				{% endif %}">Resume</a>
+			<a href="/writing" class="
+				{% if page == 'writing' %}a--current-page
+				{% endif %}">Writing</a>
+			{% if page == 'styleguide' %}
+			<a href="/styleguide" class="a--current-page">Styles</a>
+			{% endif %}
 		</div>
-	</div>
 
-	<div class="footer">
-		<div class="footer__logo">
-			<img src="/img/logo.svg">
-		</div>
+		{% block mainContent %}{% endblock %}
+
 	</div>
 
 	{% if useJs %}

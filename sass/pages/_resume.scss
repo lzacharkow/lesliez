@@ -1,34 +1,44 @@
 .resume,
 .writing {
 
-	.group__labels {
-		@include span-columns(4);
-		@media #{$small} {
-			width: 100%;
+	.group-section {
+		line-height: 1.4;
+		margin-top: $spacing*4;
+
+		+ .group-section {
+			margin-top: $spacing*2;
+			padding-top: $spacing*2;
 		}
 	}
 
-	.group__items {
-		@include span-columns(8);
-		@media #{$small} {
-			width: 100%;
-		}
-	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		margin-top: $spacing*1.5;
 
-	.items__item {
-		+ .items__item {
-			margin-top: $spacing*1.5;
-		}
-
-		@media #{$small} {
-			margin-top: $spacing;
+		.items__item {
+			padding: 0;
 			+ .items__item {
+				margin-top: $spacing*1.5;
+			}
+
+			@media #{$small} {
 				margin-top: $spacing;
+				+ .items__item {
+					margin-top: $spacing;
+				}
 			}
 		}
 	}
-}
 
-.resume .page__block {
-	padding-bottom: 0;
+	ul.group__items--skills {
+		list-style: disc;
+		padding-left: $spacing;
+		margin-top: $half-spacing;
+
+		.items__item {
+			margin-top: $quarter-spacing;
+		}
+	}
 }

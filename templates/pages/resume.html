@@ -5,26 +5,44 @@
 
 {% block mainContent %}
 
-	{% for resumeSection in resume %}
-	<div class="group-section">
-		<div class="group__labels">
-			<div class="label__title">
-				{{ resumeSection.groupName }}
-			</div>
-		</div>
-		<ul class="group__items">
+<div class="page__block page__block--headline">
+	<div class="block__content">
+		<h1>Me, on paper.</h1>
+		<p>Download a copy of my resume <a href="/img/Leslie_Zacharkow_Resume.pdf" target="_blank">here</a>.</p>
+	</div>
+</div>
+
+<div class="page__block">
+	<div class="block__content">
+		{% for resumeSection in resume %}
+		{% if resumeSection.groupName == 'Skills' %}
+			<h2>{{ resumeSection.groupName }}</h2>
 			{% for item in resumeSection.items %}
-			<li class="items__item">
-				<a class="item__title" href="{{item.link}}" target="_blank">{{ item.label }}</a>
-				<div class="item__job-title">{{ item.title }}</div>
-				<div class="item__dates">{{ item.dates | safe }}</div>
-			</li>
+			<h3>{{ item.label }}</h3>
+			<ul class="group__items group__items--skills">
+				{% for skill in item.skills %}
+				<li class="items__item">{{ skill }}</li>
+				{% endfor %}
+				{% for extra in item.extras %}
+				<li class="items__item"><i>Working on</i> {{ extra }}</li>
+				{% endfor %}
+			</ul>
 			{% endfor %}
-		</ul>
+		{% else %}
+			<h2>{{ resumeSection.groupName }}</h2>
+			<ul class="group__items">
+				{% for item in resumeSection.items %}
+				<li class="items__item">
+					<a class="item__title" href="{{item.link}}" target="_blank">{{ item.label }}</a>
+					<div class="item__job-title">{{ item.title }}</div>
+					<div class="item__dates">{{ item.dates | safe }}</div>
+				</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		{% if loop.last %}{% else %}<hr>{% endif %}
+		{% endfor %}
 	</div>
-	{% endfor %}
-	<div class="project__footer">
-		<p class="caption">View or download the PDF version of my resume, <a href="/img/Leslie_Zacharkow_Resume.pdf" target="_blank">here</a>.</p>
-	</div>
+</div>
 
 {% endblock %}

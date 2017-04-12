@@ -1,108 +1,91 @@
-$logo-size: 100px;
-@media #{$small} {
-	$logo-size: 40px;
-}
-
 .page-wrapper {
-	padding-top: $spacing*1.5;
 	@include clearfix;
+	margin: 0 auto;
 }
 
 .page__navigation {
-	width: 100%;
-	max-width: 460px;
 	display: flex;
-    justify-content: space-around;
-    margin: 0px auto $spacing auto;
-    padding: 0 $half-spacing;
+    justify-content: center;
+    margin: $spacing*2 auto 0 auto;
+    @media #{$small} {
+    	margin: $spacing auto 0 auto;
+    }
+
     a {
-    	display: inline-block;
-		padding: $half-spacing;
+		padding: $half-spacing 0;
+		margin: 0 $spacing;
 		&:after {
 			content: " ";
 			display: block;
 			width: 100%;
-			height: 4px;
+			height: 10px;
 			margin-top: $quarter-spacing;
-			border-radius: 1px;
+			background-size: 20px;
+			background-repeat: repeat-x;
+			background-position: center;
 		}
 		&.a--current-page {
+			color: $link-color-hover;
 			&:after {
-				background: currentColor;
+				background-image: url('/img/sine-pattern-thick-orange.svg');
 			}
 		}
     }
 }
 
 .page__block {
-	max-width: $page-max-width-small;
 	margin: 0 auto;
+	padding: $spacing*4 $spacing;
 	position: relative;
-	background: $white;
-	border-radius: 2px;
-	@include get-shadow-color(rgba($pink, 0.3));
 
-	+ .page__block {
-		margin-top: $spacing*4;
-		@media #{$small} {
-			margin-top: $spacing*3;
-		}
+	.block__content {
+		max-width: $page-max-width;
+		margin: 0 auto;
 	}
-}
-
-.page__block--main {
-	padding: $spacing*4 0;
-	@media #{$small} {
-		padding: $spacing*2 0;
-	}
-}
-
-.page__block--role {
-	padding: $spacing*4 0;
-	@media #{$small} {
-		padding: $spacing*3 0;
-	}
-}
-
-.block__footer {
-	margin-top: $spacing*3;
-	@extend %base-element-padding;
-	padding: $spacing*2 0;
-	border-top: 1px dashed $divider-color;
-	position: relative;
-	text-align: center;
 
 	@media #{$small} {
-		margin-top: $spacing*2;
+		padding: $spacing*3 $spacing;
 	}
 }
 
-$footer-logo-size: 60px;
-$footer-logo-padding: $half-spacing;
-$footer-padding: $spacing;
-$footer-height: ($footer-logo-size + $footer-logo-padding*2) + $footer-padding*2;
-
-@include sticky-footer(
-	$footer-height,
-	'.page-wrapper',
-	'.page',
-	'.footer'
-);
-
-.footer {
-	padding: $footer-padding;
-	text-align: center;
-	@include user-select(none);
+.page__block--headline {
+	padding-top: $spacing*3;
+	@media #{$small} {
+		padding-top: $spacing*2;
+	}
 }
 
-.footer__logo {
-	padding: $footer-logo-padding;
-	display: inline-block;
-	background: $bg-color;
-	border-radius: $footer-logo-size/2 + $footer-logo-padding;
-	img {
-		@include size($footer-logo-size);
-		display: block;
-		opacity: 0.7;
+.page__block:nth-of-type(odd) {
+	background-color: $bg-alt-color;
+}
+
+.block__headline {
+	display: flex;
+	align-items: center;
+}
+
+.headline__left {
+	flex: 1 1 auto;
+}
+
+.headline__right {
+	flex: 0 0 60px;
+	margin-left: $spacing*3;
+	@media #{$small} {
+		margin-left: $spacing;
+	}
+}
+
+.headline__footer {
+	display: flex;
+	justify-content: left;
+	margin-top: $spacing;
+	a {
+		padding: $half-spacing 0;
+		margin-right: $spacing;
+	}
+	svg {
+		@include size(1.25em);
+		fill: currentColor;
 	}
 }
