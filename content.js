@@ -63,10 +63,10 @@ module.exports = {
 				}, {
 					label: "Development",
 					skills: [
-						"HTML/CSS, SCSS & LESS", "SVG", "Javascript, AngularJS, NodeJS", "Nunjucks", "Grunt", "Git"
+						"HTML/CSS, SCSS & LESS", "SVG", "Javascript, React, AngularJS", "Node", "Nunjucks", "Grunt", "Git"
 					],
 					extras: [
-						"React",
+						"Express",
 						"Gulp"
 					]
 				}, {
