@@ -131,7 +131,7 @@ body {
 .caption + p {
   margin-top: 40px; }
 
-p a,
+p:not(.headline) a,
 ul a {
   font-size: 1.1em; }
 
