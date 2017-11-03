@@ -7,6 +7,11 @@ module.exports = {
 			groupName: "Employment",
 			items: [
 				{
+					label: "RankScience",
+					link: "https://www.rankscience.com/",
+					title: "UX Design & Front-end Development Consultant",
+					dates: "April 2017 - Present"
+				}, {
 					label: "Opower (acquired by Oracle)",
 					link: "https://opower.com/",
 					title: "Senior UX Designer/Developer",
@@ -57,30 +62,27 @@ module.exports = {
 						"Sketch"
 					],
 					extras: [
-						"Visual design",
+						"Graphic design",
 						"Design workshops"
 					]
 				}, {
 					label: "Development",
 					skills: [
-						"HTML/CSS, SCSS & LESS", "SVG", "Javascript, React, AngularJS", "Node", "Nunjucks", "Grunt", "Git"
+						"HTML/CSS, SCSS & LESS", "SVG", "Javascript, ES6", "React, AngularJS", "Nunjucks"
 					],
 					extras: [
-						"Express",
-						"Gulp"
+						"Webpack",
+						"Visual regression testing"
 					]
 				}, {
 					label: "UX Research",
 					skills: [
-						"Quantitative surveys", "Survey Gizmo", "Optimal Workshop"
-					],
-					extras: [
-						"Qualitative interview moderation"
+						"Internal workshops", "User-interview moderation", "Survey Gizmo", "Optimal Workshop"
 					]
 				}, {
 					label: "Product Management",
 					skills: [
-						"Agile Development", "Cross-team collaboration", "Goal setting & KPI definition", "Feature scoping", "Atlassian Jira & Confluence"
+						"Goal setting & KPI definition", "Feature scoping & roadmaps", "Cross-team collaboration", "Project management tools"
 					]
 				}
 			]
