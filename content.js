@@ -7,14 +7,19 @@ module.exports = {
 			groupName: "Employment",
 			items: [
 				{
+					label: "Snapdocs",
+					link: "https://snapdocs.com/",
+					title: "Senior Front-end Engineer - Technical Lead",
+					dates: "January 2018 - August 2019"
+				}, {
 					label: "RankScience",
 					link: "https://www.rankscience.com/",
-					title: "UX Design & Front-end Development Consultant",
-					dates: "April 2017 - Present"
+					title: "UX Engineering Consultant",
+					dates: "April 2017 - December 2017"
 				}, {
 					label: "Opower (acquired by Oracle)",
 					link: "https://opower.com/",
-					title: "Senior UX Designer/Developer",
+					title: "Senior UX Designer/Engineer",
 					dates: "September 2015 - December 2016"
 				}, {
 					label: "Urban Outfitters",
@@ -53,6 +58,27 @@ module.exports = {
 			skills: true,
 			items: [
 				{
+					label: "Engineering",
+					skills: [
+						"Javascript, ES6",
+						"React, Redux",
+						"Test-driven Development",
+						"RESTful APIs",
+						"HTML/JSX, CSS/SCSS/LESS, SVG",
+						"Webpack",
+						"Architecture specs & Best-practice documentation",
+					],
+					extras: [
+						"Node",
+						"Ruby on Rails",
+						"AngularJS",
+					]
+				}, {
+					label: "Product Management",
+					skills: [
+						"Goal setting & KPI definition", "Feature scoping & roadmaps", "Cross-team collaboration", "Project management tools"
+					]
+				}, {
 					label: "Design",
 					skills: [
 						"User experience design",
@@ -60,29 +86,11 @@ module.exports = {
 						"Illustration",
 						"Adobe Creative Suite",
 						"Sketch"
-					],
-					extras: [
-						"Graphic design",
-						"Design workshops"
-					]
-				}, {
-					label: "Development",
-					skills: [
-						"HTML/CSS, SCSS & LESS", "SVG", "Javascript, ES6", "React, AngularJS", "Nunjucks"
-					],
-					extras: [
-						"Webpack",
-						"Visual regression testing"
 					]
 				}, {
 					label: "UX Research",
 					skills: [
 						"Internal workshops", "User-interview moderation", "Survey Gizmo", "Optimal Workshop"
-					]
-				}, {
-					label: "Product Management",
-					skills: [
-						"Goal setting & KPI definition", "Feature scoping & roadmaps", "Cross-team collaboration", "Project management tools"
 					]
 				}
 			]

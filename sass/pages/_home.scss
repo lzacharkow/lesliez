@@ -8,7 +8,7 @@
 }
 
 .headline__right {
-	$hand-size: 70px;
+	$hand-size: 125px;
 	$hand-size-small: 60px;
 
 	flex: 0 0 $hand-size;
@@ -40,12 +40,17 @@
 		.finger-4,
 		.finger-5 {
 			@include transition(transform $transition-speed);
+			transform-box: fill-box;
 			@include transform-origin(center 75%);
+		}
+
+		.finger-1 {
+			@include transform-origin(center center);
 		}
 
 		&:hover {
 			.finger-1 { @include transform(rotate(-7deg)); }
-			.finger-2 { @include transform(rotate(-5deg)); }
+			.finger-2 { @include transform(rotate(-6deg)); }
 			.finger-4 { @include transform(rotate(6deg)); }
 			.finger-5 { @include transform(rotate(8deg)); }
 		}
